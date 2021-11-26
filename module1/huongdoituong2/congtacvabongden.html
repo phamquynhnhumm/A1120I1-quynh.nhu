@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<label>Bóng đèn </label>
+<br>
+<label>Trang thái :</label>
+<img id="anh" src="img/dentat.gif">
+<br>
+<button type="button" onclick="bat_tat()" id="nut">Bật</button>
+<p id="trangthai"></p>
+<script>
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOff_On() {
+            this.status = !this.status;
+        }
+    }
+
+    class SwitchButton {
+        constructor(button) {
+            this.button = button;
+        }
+
+        switch() {
+            if (this.button.status === true) {
+                document.getElementById("anh").src = "img/densang.gif";
+                document.getElementById("trangthai").innerText = "Đèn đang bật !"
+                document.getElementById("nut").innerText = "tắt";
+            } else {
+                document.getElementById("anh").src = "img/dentat.gif";
+                document.getElementById("trangthai").innerText = "Đèn đang tắt!";
+                document.getElementById("nut").innerText = "bật";
+            }
+        }
+    }
+
+    let button = new ElectricLamp(true);
+    let den = new SwitchButton(button);
+
+    function bat_tat() {
+        button.turnOff_On();
+        den.switch();
+    }
+</script>
+</body>
+</html>

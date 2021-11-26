@@ -1,0 +1,32 @@
+ Quiz 1.1 :
+1 : java do sun microsystems sở hữu 
+	 + sai do ovacle sở hữu
+2: JVM
+	+ là viết tắt của Java Vituals Machine
+3: Các nền tảng java la :
+	+ Java Platform, Standard Edition (Java SE)
+	+Java Platform, Enterprise Edition (Java EE)
+	+Java Platform, Micro Edition (Java ME)
+	+Java FX
+4 : java SE cung cấp tính năng  mở rộng của ngôn ngữ java 
+	 + FALSe => Cung cấp tính năng lõi của ngôn ngữ java
+5 :Các file java sau khi được biên dịch sẽ có kết quả là các file có phần mở rộng là 
+	+ class
+6:
+
+
+Quiz 1.2 :
+1 :Công cụ lập trình không hỗ trợ phát triển, dịch và chạy chương trình java là  : 
+	+ Visual Studio
+2: công cụ trong JDK cho phép dịch file mã nguồn java ra mã bytecode là  : 
+	+ javac
+3:Hàm xuất dữ liệu ra màn hình theo các ký tự định dạng là 
+	+ System.out.format()
+	+System.out.printf()
+4 : Khi gán biến a = 3.0 cần khai báo biến kiểu dữ liệu cho a là :
+	+ double
+5: Ngôn ngữ java chính thức có tên gọi vào năm :
+	+ 1990
+6: Phương thức nào của lớp java.util.Scanner được sử dụng để đọc một chuỗi từ bàn phím
+	+Scanner.nextLine()
+7:

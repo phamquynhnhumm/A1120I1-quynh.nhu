@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Sample Screen:</h3>
+<input type="text" id="phantu">
+<button onclick="Add()">Add</button>
+<button onclick="Display()">Dispkay</button>
+<script>
+    let mang = [];
+     function Add() {
+          var gtri = document.getElementById('phantu').value;
+          mang.push(gtri);
+         document.getElementById('phantu').value = "";
+     }
+     function Display() {
+         for (var i=0; i<mang.length;i++) {
+             document.write("Element "+ "i" + "=" + mang[i])
+             document.write("<br>")
+             alert(mang.length)
+         }
+     }
+</script>
+</body>
+
+</html>

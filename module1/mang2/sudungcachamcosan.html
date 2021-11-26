@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sử dùng các hàm có sẵn</title>
+</head>
+<body>
+<h2>Bài 1 :</h2>
+<script>
+    let mang1 = ["Red","Green","White","Black"]
+    document.write(mang1.join());
+</script>
+<br>
+<h2>Bài 2: </h2>
+<input type="text" id='chuoi' placeholder="Nhập chuỗi số">
+<button type="button" onclick="kq()">Kết quả</button>
+<p id="kkq"></p>
+<br>
+<script>
+    function kq() {
+        let num = document.getElementById('chuoi').value;
+        let str = num.toString();
+        let mang = [str[0]];
+        for (var i=0;i<str.length;i++)
+        {
+            if(str[i-1] % 2 ==0 && str[i] %2==0)
+            {
+                mang.push('-' + str[i]);
+
+            }else
+            {
+                mang.push('' + str[i]);
+            }
+          document.getElementById('kkq').innerText=  mang.join('');
+        }
+    }
+</script>
+
+<br>
+<h2>Bài 3: </h2>
+<input type="text" id='chuoi1' placeholder="Nhập chuỗi số">
+<button type="button" onclick="kqq3()">Kết quả</button>
+<p id="kkq1"></p>
+<br>
+<script>
+    function kqq3() {
+
+         let chuoi = document.getElementById('chuoi1').value;
+         let st = chuoi.toString();
+         let mang2 = [];
+        for( var i=0;i < chuoi.length;i++)
+        {
+            if(st[i] == st[i].toUpperCase())
+            {
+                mang2.push(st[i].toLowerCase());
+            }
+             else {
+                 mang2.push(st[i].toUpperCase());
+             }
+            document.getElementById('kkq1').innerText =  mang2.join('');
+        }
+    }
+</script>
+
+
+</body>
+</html>

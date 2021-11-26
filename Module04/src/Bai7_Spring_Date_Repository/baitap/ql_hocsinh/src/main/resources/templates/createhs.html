@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Thêm mới học sinh</h3>
+
+<form action="/create" method="post" th:object="${hocsinhs}">
+    <label>Tên</label>
+    <input type="text" th:field="*{ten}">
+    <br>
+    <label>Ngày sinh</label>
+    <input type="text" th:field="*{ngaysinh}"><br>
+    <label>Số điện thoại</label>
+    <input type="text" th:field="*{sdt}"><br>
+
+    <label>Lớp</label>
+    <select th:field="*{lophoc}">
+        <option th:each="lop : ${lops}" th:text="${lop.tenlop}" th:value="${lop.id}"></option>
+    </select><br>
+
+    <button>Thêm</button>
+</form>
+</body>
+</html>

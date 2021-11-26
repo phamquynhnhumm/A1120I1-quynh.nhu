@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau4</title>
+</head>
+<body>
+<canvas id="myCanvas">
+    <script>
+        class Cirle {
+            constructor(x, y, radius, color) {
+                this.x = x;c
+                this.y = y;
+                this.radius = radius;
+                this.color = color
+            }
+            render(canvas) {
+                var c = document.getElementById(canvas);
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.stroke();
+            }
+        }
+        var hinhTron = new Cirle(10, 10, 100, '#000000');
+        hinhTron.render('myCanvas')
+    </script>
+</canvas>
+</body>
+</html>

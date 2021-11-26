@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bài 1 :</h1>
+<p id= 'bai1'></p>
+<script>
+    var text =''
+for(var i =0; i<=5;i++)
+{
+     text += "<br>The number is" + i
+}
+    document.getElementById('bai1').innerHTML = text;
+</script>
+<h1>Bài 2 :</h1>
+<label>Nhập vào số </label>
+<input type="text" id="so">
+<button type="button" onclick="kq2()">Kết quả</button>
+<p id="bai2"></p>
+<script>
+    let so = document.getElementById('so');
+    let tong = 0;
+    function kq2() {
+        for( var i= 0; i<= (parseInt(so.value));i ++)
+        {
+                tong += i;
+            }
+        document.getElementById('bai2').innerText =  " Tính tổng các phần tử từ 1 đến số  "  + so.value+ " : " + tong;
+    }
+
+</script>
+</body>
+</html>

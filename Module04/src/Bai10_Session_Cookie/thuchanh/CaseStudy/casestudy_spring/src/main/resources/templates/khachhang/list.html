@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List khách hàng</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .link {
+            background: #2C3E50;
+        }
+
+        .link :hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="~{header :: header1}"></div>
+    <div th:replace="~{menu :: menu1}"></div>
+    <nav>
+        <br>
+        <center>
+            <h2>Danh sách Khách Hàng</h2>
+        </center>
+        <form method="get" action="/search">
+            <input type="text" name="nameSearch" th:value="${nameSearch}">
+            <button>Search</button>
+        </form>
+        <div class="row">
+            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-3">
+                <button class="link"><a class="nav-link" href="/khachhang/create" style="color:white;"> + Thêm
+                    mới</a></button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="tab-content">
+                    <div class="container">
+                        <p style="color: #005cbf" th:text="${mgs}"></p>
+                        <table class="table table-hover" id="tablenhanvien">
+                            <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <!--                                <th>ngày sinh</th>-->
+                                <!--                                <th >cmnd</th>-->
+                                <!--                                <th >SĐT</th>-->
+                                <th>Ngày sinh</th>
+                                <!--                                <th>lương</th>-->
+                                <th>Giới tính</th>
+                                <th>Email</th>
+                                <th>Loại Khách</th>
+                                <th>Địa chỉ</th>
+                                <!--                                <th>Tên_User</th>-->
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="khachhang1 : ${khachhangs}">
+                                <td th:text="${khachhang1.ten}"></td>
+                                 <td th:text="${khachhang1.ngaysinh}"></td>
+                                <td th:switch="${khachhang1.gioiTinh}">
+                                    <span th:case="0">Nam</span>
+                                    <span th:case="1">Nữ</span>
+                                    <span th:case="*">BEDE</span>
+                                </td>
+                                <td th:text="${khachhang1.email}"></td>
+                                <td th:text="${khachhang1.loaiKhach.tenLoaiKhach}"></td>
+                                <td th:text="${khachhang1.thanhPho}"></td>
+                                <td>
+                                    <a th:href="@{/khachhang/edit(id = ${khachhang1.khachHangId})}">
+                                        Sửa
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/khachhang/delete(id = ${khachhang1.khachHangId})}">
+                                        Xóa
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <!--    trường hợp chưa search-->
+                        <div th:if="${nameSearch == null}">
+    <span>
+        <a th:if="${khachhangs.hasPrevious()}" th:href="@{/khachhang(page=${khachhangs.number - 1})}">Trước</a>
+    </span>
+                            <span th:each="pageNo: ${#numbers.sequence(0,khachhangs.totalPages -1)}">
+            <a th:href="@{/khachhang(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+                            <span>
+        <a th:if="${khachhangs.hasNext()}" th:href="@{/khachhang(page=${khachhangs.number + 1})}">Sau</a>
+    </span>
+                        </div>
+
+                        <!--                        trường hợp search-->
+                        <div th:if="${nameSearch != null}">
+    <span>
+        <a th:if="${khachhangs.hasPrevious()}"
+           th:href="@{/search(page=${khachhangs.number - 1} , nameSearch=${nameSearch})}">Trước</a>
+    </span>
+
+                            <span th:each="pageNo: ${#numbers.sequence(0,khachhangs.totalPages -1)}">
+            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>
+    </span>
+                            <span>
+        <a th:if="${khachhangs.hasNext()}"
+           th:href="@{/search(page=${khachhangs.number + 1}, nameSearch=${nameSearch})}">Sau</a>
+    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div th:replace="~{footer :: footer1}">
+    </div>
+</div>
+</body>
+</html>

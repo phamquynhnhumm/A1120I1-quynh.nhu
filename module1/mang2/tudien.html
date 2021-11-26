@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: darkslategray">
+
+<center><h1>Google dịch mini</h1>
+    <br><br>
+<table>
+    <tr>
+        <th> <b>Tiếng Anh :</b></th>
+        <th>  <b>Tiếng Việt :</b></th>
+    </tr>
+           <tr></tr><tr></tr>
+    <tr>
+        <td><input type="text" id="tanh" placeholder="Nhập văn bản"> </td>
+        <td>
+
+            <input type="text" id="k" >
+        </td>
+    </tr>
+    <tr><button type="button" value="Tìm kiếm" onclick="kq()">Tìm kiếm</button></tr>
+</table>
+
+</center>
+<script>
+    let mang1 =['Hello','goodbye','happy','sad','to speak','hate']
+    let mang2 =['Chào','Tạm biệt','vui vẻ','buồn','nói','ghét']
+    let tanh = document.getElementById('tanh')
+
+        function kq() {
+            for ( var i= 0;i<6;i++)
+     {
+
+         if(tanh.value == mang1[i])
+         {
+             document.getElementById('k').innerText =  'Nghĩa của từ đó là  : '+  mang2[i];
+             break;
+         }
+         else
+             document.getElementById('k').innerText = 'không tìm thấy kết quả!';
+     }
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+import {HopDong} from '../model/HopDong';
+export const hopdongDao: HopDong[] = [{
+    idHD: 1,
+    nhanVien: 2,
+    khachHang: 2,
+    dichVu: 1,
+    ngayLamHD: '04-02-2021',
+    ngayKetThucHD:  '04-04-2021',
+    tienDatCoc: 33444,
+    tongtien: 392167655655,
+  },
+  {
+    idHD: 2,
+    nhanVien: 2,
+    khachHang: 2,
+    dichVu: 1,
+    ngayLamHD: '04-02-2021',
+    ngayKetThucHD:  '04-04-2021',
+    tienDatCoc: 33444,
+    tongtien: 392167655655,
+  },
+  {
+    idHD: 3,
+    nhanVien: 2,
+    khachHang: 2,
+    dichVu: 1,
+    ngayLamHD: '04-02-2021',
+    ngayKetThucHD:  '04-04-2021',
+    tienDatCoc: 33444,
+    tongtien: 392167655655,
+  }, {
+    idHD: 4,
+    nhanVien: 2,
+    khachHang: 2,
+    dichVu: 1,
+    ngayLamHD: '04-02-2021',
+    ngayKetThucHD:  '04-04-2021',
+    tienDatCoc: 33444,
+    tongtien: 392167655655,
+  },
+
+];

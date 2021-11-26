@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1079de9-f4e7-43fd-b9c9-bcb33ee5179f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/dao/dichvuDao.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/dao/hopdongDao.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/dao/khachhangDao.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/dao/nhanvienDao.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/model/DichVu.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/model/HopDong.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/model/KhachHang.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/app/model/NhanVien.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/slider-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/slider-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/slider-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/thumb-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/thumb-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy/case/src/assets/thumb-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/content.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/content.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/dichvu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/dichvu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/listdv/listdv.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/listdv/listdv.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/listdv/listdv.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/dichvu/listdv/listdv.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/hopdong.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/hopdong.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/listhd/listhd.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/listhd/listhd.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/listhd/listhd.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/listhd/listhd.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/hopdong/listhd/listhd.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/khachhang.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/khachhang.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/list/list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/list/list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/khachhang/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/editnv/editnv.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/listnv/listnv.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/listnv/listnv.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/listnv/listnv.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/listnv/listnv.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/listnv/listnv.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/nhanvien.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/content/nhanvien/nhanvien.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/heafer/heafer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/heafer/heafer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy/case/src/app/menu/menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy/case/src/app/menu/menu.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="21KOPEFHtazr99QcIH7tOmjAQxZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/casestudy/case" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1079de9-f4e7-43fd-b9c9-bcb33ee5179f" name="Changes" comment="" />
+      <created>1637686285679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637686285679</updated>
+      <workItem from="1637686286855" duration="33000" />
+      <workItem from="1637686367303" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Bai2/src/Th_bienvakieuDL.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/btsearch.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/Thifelse.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/Promise.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/th_doituong.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/ham.js" />
+        <option value="$PROJECT_DIR$/Bai2/src/th_mang.js" />
+      </list>
+    </option>
+  </component>
+</project>

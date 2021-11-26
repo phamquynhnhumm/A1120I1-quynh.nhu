@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+
+<script>
+
+    function ham(arr) {
+        let min = arr[0]
+        if(arr.length == 0)
+        {
+            alert("mảng rỗng!");
+        }
+        for (var i =1;i < arr.length;i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    let ar1 =  [];
+    let min =   ham(ar1);
+    document.write(min);
+</script>
+</body>
+</html>

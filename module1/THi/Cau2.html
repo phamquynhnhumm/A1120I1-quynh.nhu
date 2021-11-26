@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xóa phần tử x trong mảng!</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    do {
+        var n = prompt('Nhập vào độ dài của mảng');
+    } while (isNaN(n));
+    function tryRemoveFromArray(n)
+    {
+        for( let  i =0;i <n ; i++)
+        {
+            let pt  = prompt("Nhập phần tử thứ " +i + " trong mảng");
+            arr.push(pt);
+        }
+    }
+    tryRemoveFromArray(n);
+
+    document.write( "Mảng là  Arr =[" + arr + "]");
+</script>
+<br>
+<label>Nhập vào số muốn xóa</label>
+<input type="text" name="timkiem" id="timkiem">
+<br>
+<button  type="button" onclick="xoa()">Xóa</button>
+<script>
+
+    function xoa()
+    {
+        let ptxoa = document.getElementById("timkiem").value;
+        for(let i =0; i< n;i ++)
+        {
+            if( arr[i] == ptxoa)
+            {
+                arr.splice(i,1);
+                i--;    // saiiiii
+            }
+        }
+        document.write( "Mảng còn lại là  Arr =[" + arr + "]");
+    }
+
+</script>
+
+</body>
+</html>

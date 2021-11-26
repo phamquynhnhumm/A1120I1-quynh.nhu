@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function date(day, month, year) {
+        this.day = day,
+            this.month = month,
+            this.year = year,
+            this.getDay = function () {
+                return this.day
+            }
+        this.getMonth = function () {
+            return this.month
+        }
+        this.getYear = function () {
+            return this.year
+        }
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.setMonth = function (month) {
+            this.month = month
+        }
+        this.setYear = function (year) {
+            this.year = year
+        }
+    }
+    let hien = new  date('1','1','2021')
+    alert(hien.getDay() +"/" + hien.getMonth() +"/"+ hien.getYear() )
+    hien.setDay(5);
+    hien.setMonth(8);
+    hien.setYear(2022);
+    alert(hien.getDay() +"/" + hien.getMonth() +"/"+ hien.getYear() )
+
+
+</script>
+</body>

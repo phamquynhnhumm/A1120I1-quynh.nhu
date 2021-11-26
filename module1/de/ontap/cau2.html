@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau2</title>
+</head>
+<body>
+<label>Mang ban dau </label>
+<p id="firstarray"></p>
+<br>
+<label>Mang sau khi xóa: </label>
+<p id="result"></p>
+<script>
+    var array = [];
+    do {
+        var arrayLength = prompt('Nhập vào độ dài của mảng');
+    } while (isNaN(arrayLength) || (arrayLength < 0));
+
+    for (i = 0; i < arrayLength; i++) {
+        array[i] = prompt('Phan tu thu' + (parseInt(i) + 1))
+    }
+    var x = prompt('Nhap vao gia tri x');
+    document.getElementById('firstarray').innerHTML = array;
+
+    function tryRemoveFromArray(array, x) {
+        var newArray = [];
+        for (i = 0; i < array.length; i++) {
+            if (array[i] !== x) {
+                newArray.push(array[i])
+            }
+        }
+        document.getElementById('result').innerHTML = newArray;
+    }
+
+    tryRemoveFromArray(array, x);
+</script>
+</body>
+</html>

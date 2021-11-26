@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .bor
+        {
+            border:forestgreen solid ;
+            border-width: 2px;
+        }
+        .bor:hover
+        {
+            border: red solid;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3 style="color:red;">CHI TIẾT SẢN PHẨM</h3>
+    <br>
+</div>
+<div class="row" >
+    <div class="col-sm-3 "></div>
+    <form action="/giohang" method="get"  th:object="${sanphams}">
+    <div class="col-sm-3">
+            <div>
+                <img th:src=" @{'/img/'+${sanphams.img}}" style="width:300px;height: 300px ">
+            </div>
+            <div >
+                <center><p th:text=" 'Mã SP :' +${sanphams.idSanpham}"></p>
+                    <p th:text="${sanphams.gia} +'đ'"></p>
+                </center>
+            </div>
+
+    </div>
+    </form>
+    <div class="col-sm-4">
+        <div><i>Sản Phẩm <span th:text="${sanphams.ten}"></span></i></div>
+        <div style="background: burlywood;color: chocolate">
+            <p> 1 : Tặng Banner, thiệp ( trị giá 20.000đ) miễn phí</p>
+            <p> 2 : Giảm ngay 20.000d khi bạn tạo đơn hàng online</p>
+            <p> 3 : Tặng Banner, thiệp ( trị giá 20.000đ) miễn phí</p>
+            <p> 4 : Giao gấp trong  3 giờ</p>
+            <p> 5 : Tặng Banner, thiệp ( trị giá 20.000đ) miễn phí</p>
+            <p> 6 : Cam keeys tươi trong 3 ngày</p>
+        </div>
+    </div>
+    <div class="col-sm-2 ">
+        <div class="row">
+            <div class="col-sm-5">
+                <button >
+                    <a th:href="@{/}">Quay lại trang chủ</a>
+                </button>
+            </div>
+            <div class="col-sm-5">
+                <button style="background: chocolate">
+                    <a th:href="@{/giohang/(id= ${sanphams.idSanpham})}">Mua hàng</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+</body>
+</html>

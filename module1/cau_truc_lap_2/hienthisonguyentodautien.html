@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    let cout =0;
+    let dem =0;
+    while (dem <21) {
+        let i=0;
+      let so = prompt("Nhập vào số : ");
+        for ( i = 2; i < so ; i++) {
+            if (so % i == 0)
+            {
+                cout++;
+            }
+        }
+        if (cout == 0) {
+            document.write("so nguyen to la :\t"+ so );
+            dem = dem +1;
+        }
+     }
+</script>
+</body>
+</html>

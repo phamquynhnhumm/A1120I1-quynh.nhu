@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head"></head>
+<body>
+<h3>Chi tiết sản phẩm </h3>
+<p>
+    <a th:href="@{/}">
+        Quay trở lại danh sách sản phẩm
+    </a>
+</p>
+<div id = "form">
+        <div>
+            <label>Tên: </label>
+            <label th:text="${sanphams.getTensp()}"/>
+        </div>
+        <div>
+            <label>Giá: </label>
+            <label th:text="${sanphams.getGia()}"/>
+        </div>
+        <div>
+            <label>Nơi Sản Xuất: </label>
+            <label th:text="${sanphams.getSanxuat()}"/>
+        </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+
+</body>
+</html>

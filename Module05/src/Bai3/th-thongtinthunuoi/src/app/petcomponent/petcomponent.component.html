@@ -1,0 +1,13 @@
+<p>Vui lòng nhập thông tin Pet!</p>
+<label> Pet Name : <input type="text" (change)="Petname($event)"></label>
+<br>
+
+<label> Pet age: <input type="number" (change)="Petage($event)"></label>
+<br>
+<label> Pet Name : <input type="url" (change)="Petimg($event)"></label>
+<br>
+
+<p>Thông tin Pet bạn mới cung cấp là như sau:</p>
+<h4>Pet Name : {{petname}}</h4>
+<h4>Pet Age: {{petage}}</h4>
+<img [src]="petimg">

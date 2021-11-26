@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới học sinh</title>
+</head>
+<body>
+<h3>xin chao ban đang thêm học sinh</h3>
+<form action="/create" method="post" th:object="${hocsinhs}">
+    <p>Tên:</p>
+    <input type="text" th:field="*{ten}"/>
+
+    <p>Ngày Sinh:</p>
+    <input type="text" th:field="*{ngaysinh}"/>
+
+
+    <p>Giới Tính:</p>
+
+    <p th:each="gender,loop : ${listGender}">
+        <input type="radio" th:value="${loop.index}" th:field="*{gioitinh}">
+        <label th:text="${gender}"></label>
+    </p>
+
+    <br>
+    <p>Lớp:</p>
+    <select th:field="*{lophoc}">
+        <option th:each="lops: ${lops}" th:text="${lops.tenLop}" th:value="${lops.id}">
+        </option>
+    </select>
+
+    <input type="submit" value="Thêm mới">
+</form>
+</body>
+</html>

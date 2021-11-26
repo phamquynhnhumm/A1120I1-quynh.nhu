@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới con ngừi</title>
+</head>
+<body>
+<h3>Thêm ngừi</h3>
+<form action="/create" method="post" th:object="${peoples}">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}"/>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+    <br>
+
+    <label>Age:</label>
+    <input type="text" th:field="*{age}"/>
+    <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+    <br>
+    <input type="submit" value="thêm mới">
+</form>
+</body>
+</html>

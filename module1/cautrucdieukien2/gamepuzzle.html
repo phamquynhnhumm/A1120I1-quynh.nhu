@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game puzzle</title>
+</head>
+<body id="nen">
+<center>
+
+   <img src="img/ha1.PNG"  style="width: 300px;height: 150px" onclick="changeImgA()" id='carA'> <br>
+    <img src="img/ha2.PNG" style="width: 300px;height: 150px" onclick="h2()" id ='hh2'><br>
+    <img src="img/ha3.PNG" style="width: 300px;height: 150px" onclick="h3()" id='hh3'><br>
+    <img src="img/ha4.PNG" style="width: 300px;height: 150px" onclick="h4()" id='hh4'></br>
+    </div>
+</center>
+
+<script>
+    let carA = document.getElementById('carA');
+    let hh2 =document.getElementById('hh2');
+    let hh3 =document.getElementById('hh3');
+    let hh4 =document.getElementById('hh4');
+
+    function changeImgA() {
+        if(carA.getAttribute("src") == "img/ha1.PNG"){
+            carA.src ="img/v1.PNG"
+        } else if (carA.getAttribute("src") == "img/v1.PNG") {
+            carA.src = "img/p1.PNG"
+        } else {
+            carA.src = "img/ha1.PNG"
+        }
+        check()
+
+    }
+    function h2() {
+            if(hh2.getAttribute("src") == "img/ha2.PNG"){
+                hh2.src ="img/v2.PNG"
+            } else if (hh2.getAttribute("src") == "img/v2.PNG") {
+                hh2.src = "img/p2.PNG"
+            } else {
+                hh2.src = "img/ha2.PNG"
+            }
+        check()
+
+
+    }
+    function h3() {
+        if(hh3.getAttribute("src") == "img/ha3.PNG"){
+            hh3.src ="img/v3.PNG"
+        } else if (hh3.getAttribute("src") == "img/v3.PNG") {
+            hh3.src = "img/p3.PNG"
+        } else {
+            hh3.src = "img/ha3.PNG"
+        }
+        check()
+    }
+
+    function h4() {
+        if(hh4.getAttribute("src") == "img/ha4.PNG"){
+            hh4.src ="img/v4.PNG"
+        } else if (hh4.getAttribute("src") == "img/v4.PNG") {
+            hh4.src = "img/p4.PNG"
+        } else {
+            hh4.src = "img/ha4.PNG"
+        }
+        check()
+    }
+    function check() {
+        if (hh4.getAttribute("src") == "img/ha4.PNG" && hh3.getAttribute("src") == "img/ha3.PNG" && hh2.getAttribute("src") == "img/ha2.PNG" && carA.getAttribute("src") == "img/ha1.PNG") {
+            document.getElementById('nen').style.backgroundColor= 'red';
+        }
+        if (hh4.getAttribute("src") == "img/v4.PNG" && hh3.getAttribute("src") == "img/v3.PNG" && hh2.getAttribute("src") == "img/v2.PNG" && carA.getAttribute("src") == "img/v1.PNG") {
+            document.getElementById('nen').style.backgroundColor= 'red';
+        }
+        if (hh4.getAttribute("src") == "img/p4.PNG" && hh3.getAttribute("src") == "img/p3.PNG" && hh2.getAttribute("src") == "img/p2.PNG" && carA.getAttribute("src") == "img/p1.PNG") {
+            document.getElementById('nen').style.backgroundColor= 'red';
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

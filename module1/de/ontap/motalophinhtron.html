@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô tả lớp hình tròn</title>
+</head>
+<body>
+<script>
+    class  Circle{
+        constructor(bk) {
+            this.bk = bk;
+        }
+       getbk(bk)  {
+            this.bk = bk;
+            }
+        getAr(){
+                return Math.PI * this.bk *this.bk ;
+        }
+       }
+    var ht = new Circle(7);
+    document.write(ht.getAr());
+    ht.getbk(6);
+    document.write("va" + ht.getAr());
+</script>
+</body>
+</html>

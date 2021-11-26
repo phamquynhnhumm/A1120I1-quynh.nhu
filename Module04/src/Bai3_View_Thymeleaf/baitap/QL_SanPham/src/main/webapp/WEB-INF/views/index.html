@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+
+<body>
+<h3>Sản phẩm</h3>
+<p>
+    <a th:href="@{/sanpham/create}">
+        Thêm mới sản phẩm
+    </a>
+</p>
+<div>
+    <div th:if="${message}">
+        <span style="color:blue;" th:text="${message}"></span>
+    </div>
+</div>
+
+<div>
+    <div th:if="${delete}">
+        <span style="color:blue;" th:text="${delete}"></span>
+    </div>
+</div>
+<table id="customers">
+    <thead>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Nơi Sản Xuất</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </thead>
+    <tbody>
+    <tr th:each="sanpham: ${sanphams}">
+        <td th:text="${sanpham.getTensp()}"></td>
+        <td th:text="${sanpham.getGia()}"></td>
+        <td th:text="${sanpham.getSanxuat()}"></td>
+        <td><a th:href="@{/sanpham/edit/(id=${sanpham.getId()})}">Edit</a> </td>
+        <td><a th:href="@{/sanpham/delete/(id=${sanpham.getId()})}">Delete</a> </td>
+        <td><a th:href="@{/sanpham/view/(id=${sanpham.getId()})}">View</a> </td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

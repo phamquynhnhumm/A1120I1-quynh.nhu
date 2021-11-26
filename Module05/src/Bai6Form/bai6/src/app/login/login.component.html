@@ -1,0 +1,24 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png" id="icon"
+           alt="User Icon"/>
+    </div>
+    <form [formGroup]="login" (ngSubmit)="onSubmit()">
+      <input type="text" class="fadeIn second"  formControlName="Email"
+             placeholder="tên đăng nhập">
+      <div class="alert alert-danger" role="alert" *ngIf="login.get('Email').invalid && login.get('Email').touched">
+        Định dạng email sai!
+      </div>
+      <input type="text" class="fadeIn third" formControlName="Password"
+             placeholder="Mật khẩu">
+      <div class="alert alert-danger" role="alert" *ngIf="login.get('Password').invalid && login.get('Password').touched">
+        Vui lòng nhập mk lớn hơn s6 lkys tự
+      </div>
+      <input type="submit" class="fadeIn fourth" value="Đăng Nhập">
+    </form>
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/sigup">Nếu chưa có tài khoản hãy Đăng Ký?</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+
+<body>
+<h3>Khách hàng</h3>
+<p>
+    <a th:href="@{/khachhang/create}">
+        Thêm mới khách hàng
+    </a>
+</p>
+<div>
+    <div th:if="${message}">
+        <span style="color:blue;" th:text="${message}"></span>
+    </div>
+</div>
+
+<div>
+    <div th:if="${delete}">
+        <span style="color:blue;" th:text="${delete}"></span>
+    </div>
+</div>
+<table id="customers">
+    <thead>
+        <th>Tên</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </thead>
+    <tbody>
+    <tr th:each="khachang: ${khachhangs}">
+        <td th:text="${khachang.getTen()}"></td>
+        <td th:text="${khachang.getEmail()}"></td>
+        <td th:text="${khachang.getDiachi()}"></td>
+        <td><a th:href="@{/khachhang/edit/(id=${khachang.getId()})}">Edit</a> </td>
+        <td><a th:href="@{/khachhang/delete/(id=${khachang.getId()})}">Delete</a> </td>
+        <td><a th:href="@{/khachhang/view/(id=${khachang.getId()})}">View</a> </td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

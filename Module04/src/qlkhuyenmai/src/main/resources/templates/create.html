@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+
+    <div>
+        <center><h3 style="color: #ea7e20">Thêm mới khuyến mãi</h3></center>
+    </div>
+    <br><br>
+    <div>
+        <a href="/list"> Trở lại danh sách khuyến mãi</a>
+    </div>
+    <form method="post" action="/create" th:object="${khuyenmais}">
+        <div class="row">
+            <div class="form-group row col-4">
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">tiêu đề:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{tieude}" class="form-control" placeholder="tiêu đề"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('tieude')}" th:errors="*{tieude}"></p>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Thời gian bắt đầu</label>
+                <div class="col-sm-8">
+                    <input type="date" th:field="*{thoigianbatdau}" class="form-control"
+                           placeholder="thời gian bắt đầu"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('thoigianbatdau')}" th:errors="*{thoigianbatdau}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Thời gian kết thúc:</label>
+                <div class="col-sm-8">
+                    <input type="date" th:field="*{thoigianketthuc}" class="form-control"
+                           placeholder="thời gian kết thúc "></div>
+                <p style="color: red" th:if="${#fields.hasErrors('thoigianketthuc')}"
+                   th:errors="*{thoigianketthuc}"></p>
+
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label"> Mức giảm giá:</label>
+                <div class="col-sm-8">
+                    <input type="number" th:field="*{mucgiamgia}" class="form-control" placeholder="mức giảm giá"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('mucgiamgia')}" th:errors="*{mucgiamgia}"></p>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">chi tiết:</label>
+                <div class="col-sm-8">
+                    <textarea type="textarea" th:field="*{chitiet}" class="form-control"
+                              placeholder="chi tiết"></textarea></div>
+                <p style="color: red" th:if="${#fields.hasErrors('chitiet')}" th:errors="*{chitiet}"></p>
+            </div>
+        </div>
+
+        <center>
+            <button style="background: #0c5460;" type="submit">Thêm mới</button>
+        </center>
+    </form>
+</div>
+<br><br>
+</body>
+</html>

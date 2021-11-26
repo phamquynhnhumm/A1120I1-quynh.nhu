@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="~{header :: header1}"></div>
+    <div th:replace="~{menu :: menu1}"></div>
+    <br><br>
+    <div>
+        <center><h3 style="color: #ea7e20">Chỉnh sửa nhân viên</h3></center>
+    </div>
+    <br><br>
+
+    <form method="post" action="/nhanvien/edit" th:object="${nhanviens}">
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">ID:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{idNhanVien}" class="form-control" placeholder="id" readonly></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('idnhanvien')}" th:errors="*{idNhanVien}"></p>-->
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Tên:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{tenNhanVien}" class="form-control" placeholder="ten"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('idnhanvien')}" th:errors="*{tenNhanVien}"></p>-->
+
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Ngày sinh:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{ngaysinh}" class="form-control" placeholder="ngày sinh"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('idnhanvien')}" th:errors="*{ngaysinh}"></p>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Số cmnd:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{socmnd}" class="form-control" placeholder="số cmnd"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('socmnd')}" th:errors="*{socmnd}"></p>-->
+
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">số đt:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{sdt}" class="form-control" placeholder="số đt"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}"></p>-->
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">email:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{email}" class="form-control" placeholder="email"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Lương</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{luong}" class="form-control" placeholder="lương"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('luong')}" th:errors="*{luong}"></p>-->
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Thành Phố</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{thanhpho}" class="form-control" placeholder="thành phố"></div>
+                <!--                    <p style="color: red" th:if="${#fields.hasErrors('thanhpho')}" th:errors="*{thanhpho}"></p>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-5 col-form-label">Vị trí</label>
+                <div class="col-sm-7">
+                    <select th:field="*{viTri}">
+                        <option th:each="vitri: ${nhanviens.viTri}" th:text="${nhanviens.viTri.tenViTri}" th:value="${nhanviens.viTri.viTriId}"></option>
+
+                        <option th:each="vitri:${vitris}" th:text="${vitri.tenViTri}" th:value="${vitri.viTriId}">
+                        </option>
+                    </select>
+                    <!--                    <p style="color: red" th:if="${#fields.hasErrors('viTri.tenViTri')}" th:errors="*{viTri.tenViTri}"></p>-->
+                </div>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-5 col-form-label">Bộ phận</label>
+                <div class="col-sm-7">
+                    <select th:field="*{boPhan}">
+                        <option th:each="bophan: ${nhanviens.boPhan}" th:text="${nhanviens.boPhan.tenBoPhan}" th:value="${nhanviens.boPhan.idBoPhan}"></option>
+
+                        <option th:each="bophan:${bophans}" th:text="${bophan.tenBoPhan}"
+                                th:value="${bophan.idBoPhan}">
+                        </option>
+                    </select>
+                    <!--                    <p style="color: red" th:if="${#fields.hasErrors('viTri.tenViTri')}" th:errors="*{viTri.tenViTri}"></p>-->
+                </div>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-5 col-form-label">Trình Độ</label>
+                <div class="col-sm-7">
+                    <select th:field="*{trinhDo}">
+                        <option th:each="trinhdo: ${nhanviens.trinhDo}" th:text="${nhanviens.trinhDo.tenTrinhDo}" th:value="${nhanviens.trinhDo.idTrinhDo}"></option>
+
+                        <option th:each="trinhdo:${trinhdos}" th:text="${trinhdo.tenTrinhDo}"
+                                th:value="${trinhdo.idTrinhDo}">
+                        </option>
+                    </select>
+                    <!--                    <p style="color: red" th:if="${#fields.hasErrors('viTri.tenViTri')}" th:errors="*{viTri.tenViTri}"></p>-->
+                </div>
+            </div>
+        </div>
+        <center>
+            <button style="background: #0c5460;" type="submit">Thêm mới</button>
+        </center>
+    </form>
+</div>
+<br><br>
+<div th:replace="~{footer :: footer1}"></div>
+
+</body>
+</html>

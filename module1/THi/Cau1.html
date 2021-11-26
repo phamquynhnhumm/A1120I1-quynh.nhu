@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu1</title>
+</head>
+<body>
+<script>
+    let arr = [];
+
+    do {
+        var n = prompt('Nhập vào độ dài của mảng');
+    } while (isNaN(n));
+
+    function findMax(n) {
+        for (let i = 1; i <= n; i++) {
+            do {
+                var pt = parseInt(prompt('Nhập vào điểm thứ  ' + i));
+                arr.push(pt);
+            } while (isNaN(pt) || pt < 0)
+        }
+        let tam = 0;
+        for (let i = 0; i <= n; i++) {
+            for (let j = i + 1; j < n; j++) {
+                if (arr[i] > arr[j]) {
+                    tam = arr[i];
+                    arr[i] = arr[j];
+                    arr [j] = tam;
+                }
+            }
+        }
+        alert("Phần tử lớn nhất trong mảng là   : " + arr [arr.length - 1]);
+    }
+
+    findMax(n);
+</script>
+
+</body>
+</html>

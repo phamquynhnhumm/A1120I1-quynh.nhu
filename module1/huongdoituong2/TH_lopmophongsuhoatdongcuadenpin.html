@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô phỏng sử hoạt động của đèn pin</title>
+</head>
+<body>
+<script>
+    class Battery{
+        constructor(energy) {
+            this.energy = energy;
+        }
+        setEnergy(energy)
+        {
+            this.energy = energy;
+        }
+        getEnergy()
+        {
+            return this.energy;
+        }
+        decreaseEnergy()
+        {
+            if(this.energy>0)
+            {
+                this.energy --;
+            }
+            else ("Hãy sạc pin!");
+        }
+    }
+    class FlashLamp{
+        constructor(status,battery) {
+            this.status= status;
+            this.battery = battery;
+
+        }
+        setBattery(battery)
+        {
+            this.battery = battery;
+        }
+        getBatteryInfo()
+        {
+            return this.battery;
+        }
+        light()
+        {
+            if(this.status)
+            {
+                this.battery.decreaseEnergy();
+            }
+
+        }
+        turnOn()
+        {
+          return this.status = true;
+        }
+        turnOff()
+        {
+            return  this.status= false;
+        }
+    }
+    let  ba =  new Battery(100);
+    let  fa = new  FlashLamp(true,ba);
+    if(fa.status)
+    {
+        alert("đèn đang bật!");
+    }
+    else {
+        alert("đèn đã tắt!");
+    }
+    for (var i=0;i<10;i++)
+    {
+       fa.light();
+    }
+    alert("Số pin hiện tại là  " + fa.getBatteryInfo().getEnergy());
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+
+    <div>
+        <center><h3 style="color: #ea7e20">Thêm mới giao dich</h3></center>
+    </div>
+    <br><br>
+    <div>
+        <a href="/giaodich"> Trở lại danh sách giao dich</a>
+    </div>
+    <form method="post" action="/create" th:object="${giaodichs}">
+        <div class="row">
+            <div class="form-group row col-4">
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Mã giao dịch:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{maGiaDich}" class="form-control" placeholder="mã giao dịch"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('maGiaDich')}" th:errors="*{maGiaDich}"></p>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Tên khách hàng</label>
+                <div class="col-sm-8">
+                    <select th:field="*{dbkhachhang}">
+                        <option th:each="khachhang:${khachhangs}" th:text="${khachhang.tenKhachHang}"
+                                th:value="${khachhang.maKhachHang}">
+                        </option>
+                    </select>
+                    <!--                <p style="color: red" th:if="${#fields.hasErrors('ngaynhap')}" th:errors="*{ngaynhap}"></p>-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group row col-4">
+                    <label class="col-sm-4 col-form-label">Ngày giao dịch</label>
+                    <div class="col-sm-8">
+                        <input type="date" th:field="*{ngayGiaoDich}" class="form-control"
+                               placeholder="tiền"></div>
+                    <p style="color: red" th:if="${#fields.hasErrors('ngayGiaoDich')}"
+                       th:errors="*{ngayGiaoDich}"></p>
+                </div>
+
+                <div class="form-group row col-4">
+                    <label class="col-sm-4 col-form-label">Loại:</label>
+                    <input class="col-sm-8">
+                    <input type="radio" th:field="*{loaiDichvu}" th:name="đất" th:value="Đất"> đất </input>
+                    <br>
+                    <input type="radio" th:field="*{loaiDichvu}" th:name="nhà" th:value="nhà"> Nhà </input>
+                    <p style="color: red" th:if="${#fields.hasErrors('loaiDichvu')}" th:errors="*{loaiDichvu}"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">Đơn Giá:</label>
+                <div class="col-sm-8">
+                    <input type="number" th:field="*{donGia}" class="form-control" placeholder="Đơn giá"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('donGia')}" th:errors="*{donGia}"></p>
+            </div>
+            <div class="form-group row col-4">
+                <label class="col-sm-4 col-form-label">diện tích:</label>
+                <div class="col-sm-8">
+                    <input type="number" th:field="*{dientich}" class="form-control" placeholder="diện tích"></div>
+                <p style="color: red" th:if="${#fields.hasErrors('dientich')}" th:errors="*{dientich}"></p>
+            </div>
+        </div>
+        <center>
+            <button style="background: #0c5460;" type="submit">Thêm mới</button>
+        </center>
+        <br>
+
+        <center>
+            <button style="background: #0c5460;" type="submit">
+                <a href="/giaodich">
+                    hủy
+                </a>
+            </button>
+        </center>
+    </form>
+
+</div>
+<br><br>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> mô hình chữ nhât</title>
+</head>
+<body>
+
+<script>
+    class Rectangle
+    {
+        constructor(dai,rong) {
+            this.dai = dai
+            this.rong  = rong
+        }
+
+        setdai (dai)
+        {
+            this.dai = dai;
+        }
+        setrong(rong)
+        {
+            this.rong = rong;
+        }
+        dientich() {
+            return this.dai * this.rong
+        }
+        chuvi() {
+            return (this.dai + this.rong) * 2;
+        }
+    }
+    let  hienthi = new Rectangle(5,7);
+    alert("dien tich la  :" + hienthi.dientich())
+    alert("chu vi la :" + hienthi.chuvi());
+   hienthi.setdai(3);
+   hienthi.setrong(4);
+    alert("dien tich la  :" + hienthi.dientich())
+    alert("chu vi la :" + hienthi.chuvi());
+
+</script>
+
+</body>
+</html>

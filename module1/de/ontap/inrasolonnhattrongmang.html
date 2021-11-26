@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in ra số lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let n= prompt('Nhập vào số phần tử trong mảng!');
+    let arr = [] ;
+   for ( let  i =1 ;i <= n; i ++)
+   {
+       let pt  = prompt('Nhập vào phần tử thứ  ' + i );
+       arr.push(pt);
+
+   }
+    alert("Mảng của bạn là   : Arr[" + arr +"] " ) ;
+
+    let tam = 0;
+    for (let  i =0; i<= n ;i ++)
+    {
+        for (let j = i+1 ; j <n; j ++)
+        {
+            if(arr[i]>arr[j])
+            {
+                tam = arr[i];
+                arr[i] = arr[j];
+                arr [j] = tam;
+            }
+        }
+    }
+    for(let i = 1 ;i <= n ;i ++)
+    {
+        alert("Phần tử lớn nhất trong mảng là   : " +arr );
+        alert("Phần tử lớn nhất trong mảng là   : " +arr [n-1] );
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

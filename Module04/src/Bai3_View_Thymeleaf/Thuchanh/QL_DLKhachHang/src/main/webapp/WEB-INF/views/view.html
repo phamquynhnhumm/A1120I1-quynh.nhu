@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head"></head>
+<body>
+<h3>Chi tiết khách hàng </h3>
+<p>
+    <a th:href="@{/}">
+        Quay trở lại danh sách khách hàng
+    </a>
+</p>
+<div id = "form">
+        <div>
+            <label>Tên: </label>
+            <label th:text="${khachhangs.getTen()}"/>
+        </div>
+        <div>
+            <label>Email: </label>
+            <label th:text="${khachhangs.getDiachi()}"/>
+        </div>
+        <div>
+            <label>Địa chỉ: </label>
+            <label th:text="${khachhangs.getEmail()}"/>
+        </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+
+</body>
+</html>

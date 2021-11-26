@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body style="background-image: url('img/bia.png');">
+<center>
+    <h2 style="width: 50%">Nhập vào thông tin người dùng</h2>
+    <table width="100%">
+        <tr>
+            <td width="50%">
+                <label>Tên Customer :</label>
+            </td>
+            <td width="50%">
+                <input type="text" id="tencustomer">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Số CMND:</label>
+            </td>
+            <td>
+                <input type="text" id="socmnd"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Ngày sinh :</label>
+            </td>
+            <td><input type="date" id="ngaysinh"><br>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email:</label>
+            </td>
+            <td><input type="text" id="email"><br>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Địa chỉ:</label>
+            </td>
+            <td><input type="text" id="diachi"><br>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Loại Customer:</label></td>
+            <td><input type="radio" name='loaicustomer' value="Diamond">Diamond
+                <input type="radio" name='loaicustomer' value="Platinum">Platinum
+                <input type="radio" name='loaicustomer' value="Gold">Gold
+                <input type="radio" name='loaicustomer' value="Silver">Silver
+                <br>
+                <input type="radio" name='loaicustomer' value="Member">Member
+            </td>
+        </tr>
+        <tr>
+            <td><label>Số lượng người:</label>
+            </td>
+            <td><input type="text" id="soluongnguoi"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Số ngày thuê:</label>
+            </td>
+            <td>
+                <input type="text" id="songaythue"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Loại dịch vụ:</label>
+            </td>
+            <td>
+                <input type="radio" name='loaidichvu' value="Villa">Villa
+                <input type="radio" name='loaidichvu' value="House">House
+                <input type="radio" name='loaidichvu' value="Room">Room
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Loại phòng thuê:</label>
+            </td>
+            <td>
+                <input type="radio" name='loaiphongthue' value="Vip">Vip
+                <input type="radio" name='loaiphongthue' value="Business">Business
+                <input type="radio" name='loaiphongthue' value="Normal">Normal
+
+            </td>
+        </tr>
+    </table>
+    <button type="button" onclick="task1()" style="background-color: blue; color: white">Lưu thông tin</button>
+    <p id="k1"></p>
+    <p id="tientra"></p>
+    <button type="button" onclick="task2()" style="background-color: blue;color: white">Chỉnh sửa thông tin</button>
+</center>
+<script>
+    function task1() {
+        let typeCustomer;
+        for (let i = 0; i < document.getElementsByName("loaicustomer").length; i++) {
+            if (document.getElementsByName("loaicustomer")[i].checked === true) {
+                typeCustomer = document.getElementsByName("loaicustomer")[i].value;
+            }
+        }
+        let tyloaidichvu;
+        for (let i = 0; i < document.getElementsByName("loaidichvu").length; i++) {
+            if (document.getElementsByName("loaidichvu")[i].checked == true) {
+                tyloaidichvu = document.getElementsByName("loaidichvu")[i].value;
+            }
+        }
+        let tyloaiphongthue;
+        for (let i = 0; i < document.getElementsByName("loaiphongthue").length; i++) {
+            if (document.getElementsByName("loaiphongthue")[i].checked == true) {
+                tyloaiphongthue = document.getElementsByName("loaiphongthue")[i].value;
+            }
+        }
+        let tien;
+        if (tyloaidichvu == "Villa") {
+            tien = 500;
+        }
+        if (tyloaidichvu == "House") {
+            tien = 300;
+        }
+        if (tyloaidichvu == "Room") {
+            tien = 100;
+        }
+        let giamdiachi = 0;
+        let tydiachi = document.getElementById('diachi').value.toLowerCase();
+        if (tydiachi == "đà nẵng") {
+            giamdiachi = 20;
+        }
+        if (tydiachi == "huế") {
+            giamdiachi = 10;
+        }
+        if (tydiachi == "quảng nam") {
+            giamdiachi = 5;
+        }
+        let giamluutru = 0;
+        let tyluutru = document.getElementById('songaythue').value;
+        if (tyluutru > 7) {
+            giamluutru = 30;
+        }
+        if (5 <= tyluutru && tyluutru <= 7) {
+            giamluutru = 20;
+        }
+        if (2 <= tyluutru && tyluutru >= 4) {
+            giamluutru = 10;
+        }
+        let giamloai = 0;
+        let tyloai = typeCustomer.toLowerCase();
+        if (tyloai == "diamond") {
+            giamloai = 15;
+        }
+        if (tyloai == 'platiun') {
+            giamloai = 10;
+        }
+        if (tyloai == 'gold') {
+            giamloai = 5;
+        }
+        if (tyloai == 'silver') {
+            giamloai = 2;
+        } else {
+            giamloai = 0;
+        }
+        let giamgia = parseFloat(giamdiachi + giamluutru + giamloai);
+        let songaythue = document.getElementById("songaythue").value;
+        let tientra = parseFloat(tien * songaythue * (1 - giamgia / 100));
+        document.getElementById("tientra").innerHTML = " <br>Số tiền phải trả: " + tientra + "VND";
+        let demcham = 0;
+        let dema = 0;
+        let kt = false;
+        let email = document.getElementById("email").value;
+        do {
+
+            for (var i = 0; i < email.length; i++) {
+                if (email.charAt(i) === "@") {
+                    dema++;
+                    for (var j = i + 1; j < email.length; j++) {
+                        if (email.charAt(j) === ".") {
+                            demcham++;
+                        }
+                    }
+                }
+            }
+            if (dema != 1 || demcham < 1) {
+                email = prompt("mail :");
+                document.getElementById("email").value = email;
+            } else {
+                kt = true;
+            }
+        } while (!kt);
+        let kt1 = false;
+        let cmnd = document.getElementById("socmnd").value;
+        do {
+            console.log(cmnd + "     " + typeof cmnd);
+            if (!isNaN(cmnd)) {
+                cmnd = Number.parseFloat(cmnd);
+            }
+            if (!Number.isInteger(parseInt(cmnd))) {
+                alert("2. Số cmnd không đúng định dạng \n Mời bạn nhập lại!");
+                cmnd = prompt("cmnd :");
+                document.getElementById("socmnd").value = cmnd;
+                continue;
+            }
+            if (parseInt(cmnd) < 10000000 || parseInt(cmnd) > 99999999) {
+                alert("3. Số cmnd không đúng định dạng \n Mời bạn nhập lại!");
+                cmnd = prompt("cmnd :");
+                document.getElementById("socmnd").value = cmnd;
+                continue;
+            }
+            kt1 = true;
+        } while (!kt1);
+        let kt2 = false;
+        let ngaythue = document.getElementById("songaythue").value;
+        do {
+            if (!isNaN(ngaythue)) {
+                ngaythue = Number.parseFloat(ngaythue);
+            }
+            if (!Number.isInteger(parseInt(ngaythue))) {
+                alert("1.Sai định dang ngày thuê . \n Mời bạn nhập lại !");
+                ngaythue = prompt("Ngày thuê :");
+                document.getElementById("songaythue").value = ngaythue;
+                continue;
+            }
+            if (parseInt(ngaythue) < 0) {
+                alert("2.Sai định dang ngày thuê . \n Mời bạn nhập lại !");
+                ngaythue = prompt("Ngày thuê :");
+                document.getElementById("songaythue").value = ngaythue;
+                continue;
+            }
+            kt2 = true;
+        } while (!kt2);
+        let luongnguoi = document.getElementById("soluongnguoi").value;
+        let kt3 = false;
+        do {
+
+            if (!isNaN(luongnguoi)) {
+                luongnguoi = Number.parseFloat(luongnguoi);
+            }
+            if (!Number.isInteger(parseInt(luongnguoi))) {
+                alert("1.Sai định dang số lượng người . \n Mời bạn nhập lại !");
+                luongnguoi = prompt("Lượng người:");
+                document.getElementById("soluongnguoi").value = luongnguoi;
+                continue;
+            }
+            if (parseInt(luongnguoi) < 0) {
+                alert("2.Sai định dang số lượng người . \n Mời bạn nhập lại !");
+                luongnguoi = prompt("Lượng người:");
+                document.getElementById("soluongnguoi").value = luongnguoi;
+                continue;
+            }
+            kt3 = true;
+        } while (!kt3)
+
+        let ten = document.getElementById("tencustomer").value;
+        ten = ten.toLowerCase();
+        ten = ten.split(" ");
+
+        alert(ten);
+        let ten1 = "";
+        let ten2= "";
+        for (let i = 0; i < ten.length; i++) {
+            if (ten[i] != "") {
+                ten1=ten[i].charAt(0).toUpperCase()+ ten[i].substring(1);
+                ten2+= ten1+ ' ';
+            }
+        }
+        document.getElementById("k1").innerHTML = "<br>" + " Tên  :" + ten2 +
+            "<br> CMND :" + cmnd + "<br> Ngày Sinh:" + document.getElementById("ngaysinh").value +
+            "<br> Gmail :" + email + "<br> Địa chỉ:" + document.getElementById("diachi").value +
+            "<br> loại Customer:" + typeCustomer + "<br> Số lượng người:" + luongnguoi + "<br> Số ngày thuê:" +
+            ngaythue + "<br> Loại dịch vụ " + tyloaidichvu + "<br> Loại phòng thuê :" +
+            tyloaiphongthue;
+    }
+
+    function task2() {
+        let thuoctinh = prompt("Hãy nhập vào thuộc tính bạn muốn chỉnh sửa : \n 1: Tên Customer. \n 2: số chứng minh nhân dânh" +
+            " \n 3: Ngày sinh \n 4: Email \n 5: Địa chỉ \n 6:Loại Customer \n 7:Số lượng người " +
+            " \n 8:Ngày thuê \n 9 : Loại dịch vụ \n 10 : Loại phòng thuê ");
+        switch (thuoctinh) {
+            case '1' :
+                document.getElementById("tencustomer").value = "";
+                break;
+            case '2' :
+                document.getElementById("socmnd").value = "";
+                break;
+            case '3':
+                document.getElementById("ngaysinh").value = "";
+                break;
+            case '4':
+                document.getElementById("email").value = "";
+                break;
+            case '5':
+                document.getElementById("diachi").value = "";
+                break;
+            case '6' :
+                typeCustomer = "";
+                break;
+            case '7' :
+                document.getElementById("soluongnguoi").value = "";
+                break;
+            case '8' :
+                document.getElementById("songaythue").value = "";
+                break;
+            case '9' :
+                tyloaidichvu = "";
+                break;
+            case '10' :
+                tyloaiphongthue = "";
+                break;
+            default:
+                alert("Thuộc tính bạn nhập không có trong  menu !");
+        }
+    }
+</script>
+</body>
+</html>

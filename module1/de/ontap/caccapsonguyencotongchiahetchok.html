@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cặp số có tong chia hết cho K</title>
+</head>
+<body>
+<script>
+   let  n = prompt("Nhập vào số phần tử trong mảng :");
+   let arr = [];
+   let dem  = 0;
+   let tong= 0;
+   let k  = prompt("Nhập vào số k")
+   for ( let i =0 ;i < n;i ++)
+   {
+       let pt = prompt("Nhập vào phần tử thứ  " +i);
+       arr.push(pt);
+   }
+   document.write(arr);
+   for( let  i =0; i< n;i++)
+   {
+       for(let  j = 0 ; j <n ;j ++)
+       {
+            tong = parseFloat(arr[i]) + parseFloat(arr[j]);
+            if(i != j && tong % k == 0) {
+                dem++;
+            }
+           }
+   }
+   document.write( "số cặp có tổng chia hết cho  "+ k+ "là  :"+dem/2 );
+
+</script>
+<form>hi</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+</head>
+<body>
+
+<div>
+    <a href="/create">
+        Thêm mới khách hàng
+    </a>
+</div>
+
+<form method="get" action="/search">
+    <input type="text" name="nameSearch" th:value="${nameSearch}">
+    <button>Search</button>
+</form>
+
+<div>
+    <p style="color: blue" th:text="${mgs}"></p>
+    <p style="color: cornflowerblue" th:text="${khachhangTalkList.getCount()}"></p>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Số điện thoại</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+        <tr th:each="khachhang: ${khachhangs}">
+            <td th:text="${khachhang.id}"></td>
+            <td th:text="${khachhang.ten}"></td>
+            <td th:text="${khachhang.ngaysinh}"></td>
+            <td th:text="${khachhang.sdt}"></td>
+            <td><a th:href="@{edit/(id= ${khachhang.id})}">Edit</a></td>
+            <td><a th:href="@{delete/(id=${khachhang.id})}">xóa</a></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

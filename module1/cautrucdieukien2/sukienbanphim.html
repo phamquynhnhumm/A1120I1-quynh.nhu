@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body>
+<div style="background-image: url('./img/house.jpg');height: 95vh;background-position: center;background-size: cover">
+<img src="./img/unnamed.png" id="nobita" height="100" style="position: relative;left: 0px;top:0px;">
+</div>
+<script>
+   window.onload=()=>{
+    var nobita = document.getElementById('nobita');
+    window.addEventListener('keydown', ev => {
+        switch (ev.code) {
+    case 'ArrowDown':
+
+        nobita.style.top = (parseInt(nobita.style.top) + 10) + 'px';
+    break;
+            case 'ArrowUp':
+                nobita.style.top = (parseInt(nobita.style.top) - 10) + 'px';
+                break;
+
+            case 'ArrowRight':
+                nobita.style.left = (parseInt(nobita.style.left) + 10) + 'px';
+                break;
+            case 'ArrowLeft':
+                nobita.style.left = (parseInt(nobita.style.left) - 10) + 'px';
+                break;
+        }
+    });}
+</script>
+</body>
+</html>

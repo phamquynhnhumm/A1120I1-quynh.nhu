@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="cs.css">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent" style="background: #38404d">
+        <div class="fadeIn first">
+            <img src="./img/nhansu2.png" id="icon" alt="User Icon"/>
+        </div>
+        <center>
+            <div th:if="${#request.getParameter('error') == 'true'}"
+                 style="color:red;margin:10px 0px;">
+                Đăng Nhập Thất Bại!!!<br/>
+                Lý do :
+                <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+                      th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+            </div>
+        </center>
+        <form th:action="@{/j_spring_security_check}" method="POST">
+            <input type="text" id="ten" class="fadeIn second" name="username" placeholder="Tên đăng nhập">
+            <input type="text" id="matkhau" class="fadeIn third" name="password" placeholder="Mật khấu">
+            <input type="submit" class="fadeIn fourth" value="Đăng Nhập">
+        </form>
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="/signUp">Bạn có thể đăng ký nếu chưa có tài khoản</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

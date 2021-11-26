@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center><h2>Bai 9</h2></center>
+<label>canh a :</label>
+<input type="text" id ='canha'>
+<label>canh b :</label>
+<input type="text" id ='canhb'>
+<label>canh c :</label>
+<input type="text" id ='canhc'>
+<button type="button" onclick="bai9()">Kết quả</button>
+<h4 style="color: tomato" id ='bai9'></h4>
+<script>
+    let  a = document.getElementById('canha');
+    let  b = document.getElementById('canhb');
+    let  c = document.getElementById('canhc');
+
+    function bai9() {
+        if (parseFloat(a.value) > 0 && parseFloat(b.value) > 0 && parseFloat(c.value) > 0 && parseFloat(a.value) + parseFloat(b.value) > parseFloat(c.value) && parseFloat(c.value) + parseFloat(b.value) > parseFloat(a.value) && parseFloat(a.value) + parseFloat(c.value) > parseFloat(b.value)) {
+            document.getElementById('bai9').innerText = 'ba cạnh đó là cạnh của hình tam giác'
+        } else
+            document.getElementById('bai9').innerText = 'ba cạnh đó không là cạnh của hình tam giác'
+    }
+</script>
+
+</body>
+</html>

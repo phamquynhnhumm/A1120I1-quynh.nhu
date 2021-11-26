@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới blog</title>
+</head>
+<body>
+<h3>Thêm blog</h3>
+<form action="/create" method="post" th:object="${blogs}">
+
+
+    <label>Nội dung:</label>
+    <!--    <input type="" th:field="*{noidung}"/>-->
+    <textarea type="textarea" th:field="*{noidung}" rows="6"> </textarea>
+
+    <input type="submit" value="thêm mới">
+</form>
+</body>
+</html>

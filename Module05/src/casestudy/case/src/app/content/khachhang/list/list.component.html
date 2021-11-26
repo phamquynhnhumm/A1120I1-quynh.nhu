@@ -1,0 +1,41 @@
+<div class="container" style="font-family: 'Helvetica Neue'">
+  <h2 style="text-align: center"> Danh Sách Khách Hàng</h2>
+  <div>  <form class="form-check-inline">
+    <input class="form-control" type="text" placeholder="Search..">
+  </form>
+   <a routerLink="/themmoikhachhang"> <button class="btn btn-danger" style="text-align: center" >Thêm mới</button></a>
+  </div>
+  <br>
+  <br>
+  <table class="table table-hover table-dark">
+    <thead>
+    <tr>
+      <th>Họ tên</th>
+      <th>Loại khách</th>
+      <th>Email</th>
+      <th>sđt</th>
+      <th>số CMND</th>
+      <th>ngày sinh</th>
+      <th>địa chỉ</th>
+      <th>Xóa/Sửa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let khachHang of khachhangs">
+      <td>{{khachHang.tenKH}}</td>
+      <td>{{khachHang.loaiKh}}</td>
+      <td>{{khachHang.eMail}}</td>
+      <td>{{khachHang.sDT}}</td>
+      <td>{{khachHang.soCMND}}</td>
+      <td>{{khachHang.ngaySinh}}</td>
+      <td>{{khachHang.diaChi}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="getkhachhangID(khachHang)">🚮</button>
+        <button class="btn btn-warning" (click)="khachhangedita(khachHang)">📝</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <app-edit [khachhangedits]="khachhangedit"></app-edit>
+  <app-view [khachhangview]="khachhangviewv "></app-view>
+</div>

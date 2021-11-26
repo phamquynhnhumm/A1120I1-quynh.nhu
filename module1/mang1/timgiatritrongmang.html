@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm giá trị trong mảng</title>
+</head>
+<body>
+<script>
+    var mang =['nhu','nga','oanh','xoan','thuy','tram']
+    var gtri = prompt('Nhập vào giá trị cần tìm kiếm trong mảng :');
+    for (var i =0;i<mang.length;i++)
+    {
+        if(gtri ==mang[i])
+        {
+            document.write(gtri + " "+"có trong mảng và ở vị trí thứ" +i)
+        }
+        else {
+            document.write(gtri + " "+" không có trong mảng ");
+            break;
+        }
+
+    }
+</script>
+</body>
+</html>

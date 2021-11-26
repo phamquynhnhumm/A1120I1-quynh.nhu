@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách ngừi</title>
+</head>
+<body>
+
+<div>
+    <a href="/create">
+        Thêm mới người
+    </a>
+</div>
+
+<!--<form method="get" action="/search">-->
+<!--    <input type="text" name="nameSearch" th:value="${nameSearch}">-->
+<!--    <button>Search</button>-->
+<!--</form>-->
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+
+        </tr>
+        <tr th:each="people: ${peoples}">
+            <td th:text="${people.id}"></td>
+            <td th:text="${people.name}"></td>
+            <td th:text="${people.age}"></td>
+        </tr>
+    </table>
+
+    <!--    trường hợp chưa search-->
+    <div th:if="${nameSearch == null}">
+    <span>
+        <a th:if="${peoples.hasPrevious()}" th:href="@{/people(page=${peoples.number - 1})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,peoples.totalPages -1)}">
+            <a th:href="@{/people(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+        <span>
+        <a th:if="${peoples.hasNext()}" th:href="@{/people(page=${peoples.number + 1})}">Sau</a>
+    </span>
+    </div>
+
+    <!--    trường hợp search-->
+<!--    <div th:if="${nameSearch != null}">-->
+<!--    <span>-->
+<!--        <a th:if="${peoples.hasPrevious()}" th:href="@{/search(page=${peoples.number - 1} , nameSearch=${nameSearch})}">Trước</a>-->
+<!--    </span>-->
+
+<!--        <span th:each="pageNo: ${#numbers.sequence(0,peoples.totalPages -1)}">-->
+<!--            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>-->
+<!--    </span>-->
+<!--        <span>-->
+<!--        <a th:if="${peoples.hasNext()}" th:href="@{/search(page=${peoples.number + 1}, nameSearch=${nameSearch})}">Sau</a>-->
+<!--    </span>-->
+<!--    </div>-->
+
+</div>
+
+</body>
+</html>

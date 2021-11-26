@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nobita</title>
+</head>
+<body onload="ham()" id="nha" style=" background-image: url('./img/house.jpg') " width='950px' height=' 700px'>
+    <img src="./img/unnamed.png"  style="position:relative;left:0; top:0;" height="120px" width="90px" id="di">
+<script>
+    function tren() {
+        var nobita =document.getElementById('di');
+        nobita.style.top = parseInt( nobita.style.top) -10 +'px';
+    }
+    function duoi() {
+        var nobita =document.getElementById('di');
+        nobita.style.top = parseInt( nobita.style.top) +10 +'px';
+    }
+    function phai() {
+        var nobita =document.getElementById('di');
+        nobita.style.left = parseInt( nobita.style.left) +10 +'px';
+    }
+    function trai() {
+        var nobita =document.getElementById('di');
+        nobita.style.left = parseInt( nobita.style.left) -10 +'px';
+    }
+        function chonphim(ev) {
+            switch (ev.code) {
+                case  'ArrowDown':
+                    duoi();
+                    break;
+                case 'ArrowUp' :
+                    tren();
+                    break;
+                case 'ArrowRight' :
+                    phai();
+                    break;
+                case'ArrowLeft':
+                    trai();
+                    break;
+                }
+        }
+        function ham() {
+            window.addEventListener('keydown',chonphim)
+        }
+</script>
+</body>
+</html>

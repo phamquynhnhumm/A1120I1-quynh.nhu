@@ -1,0 +1,83 @@
+<div class="container">
+  <form style="font-family: 'Helvetica Neue'" [formGroup]="nhanvienCreate" (ngSubmit)="onSubmit()"> <br>
+    <h1 style="text-align: center; color: #202040"> Thêm mới nhân viên</h1>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>ID NV</label>
+        <input
+          formControlName="idNV" type="text" class="form-control" placeholder="id  nv">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Họ tên </label>
+        <input    formControlName="tenNV" type="text" class="form-control"  placeholder="họ tên">
+      </div>
+      <div class="group col-md-6">
+        <label >vị trí</label>
+        <select formControlName="viTri"  class="form-control">
+          <option  selected >Chọn vị trí</option>
+          <option value="Quản Lý">Quản lý</option>
+          <option value="Lao công">Lao công</option>
+          <option value="Nhân viên">Nhân viên</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Trình độ</label>
+        <select  formControlName="trinhDo"  class="form-control">
+          <option selected>Chọn trình độ</option>
+          <option value="thạc sĩ">Thạc sĩ</option>
+          <option value="12/12">12/12</option>
+          <option value="kỹ sư">Kỹ sư</option>
+        </select>
+      </div>
+      <div class="group col-md-6">
+        <label >Bộ phận</label>
+        <select formControlName="boPhan"   class="form-control">
+          <option selected>Chọn bộ phận</option>
+          <option value="tiếp tân"> Tiếp tân</option>
+          <option value="quản lý">Quản lý</option>
+          <option value="kế toán">Kế toán</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Ngày sinh</label>
+        <input type="date" formControlName="ngasySinh"  class="form-control" placeholder="ngày sinh">
+      </div>
+      <div class="group col-md-6">
+        <label >Số cmnd</label>
+        <input type="number" formControlName="soCMND"  class="form-control"  placeholder="số cmnd">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Số điện thoai</label>
+        <input type="number" formControlName="sDT"  class="form-control" placeholder="sdt">
+      </div>
+      <div class="group col-md-6">
+        <label >Email</label>
+        <input type="email" formControlName="eMail"  class="form-control"  placeholder="email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>Lương</label>
+        <input type="number" class="form-control" formControlName="luong"  placeholder="lương">
+      </div>
+      <div class="group col-md-6">
+        <label >Địa chỉ</label>
+        <input type="text" class="form-control" formControlName="diaChi"  placeholder="địa chỉ">
+      </div>
+    </div>
+    <br>
+      <button type="submit" style="background:#6f42c1;border-color:#6f42c1" class="btn btn-primary">Thêm mới</button>
+    <a routerLink="/nhanvien"> <button type="reset" style="background:#D97652;border-color:#D97652" class="btn btn-primary">Hủy</button>  </a>
+  </form>
+
+</div>
+
+

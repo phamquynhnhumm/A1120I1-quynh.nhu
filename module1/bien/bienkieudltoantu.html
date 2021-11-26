@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<script>
+    document.write("<br>");
+    document.write("Bài 1 :");
+    document.write("<br>");
+     diemly =prompt("Điểm Lý :");
+     diemhoa =prompt("Điểm hoa :");
+     diemsinh =prompt("Điểm sinh :");
+    let  ly =  parseFloat(diemly);
+    let  hoa =  parseFloat(diemhoa);
+    let  sinh =  parseFloat(diemsinh);
+    document.write("Điểm môn vật lý :"+ ly);
+    document.write("<br>");
+    document.write("Điểm môn hóa  :" + hoa);
+    document.write("<br>");
+    document.write("Điểm môn  sinh :" + sinh);
+     let tb =  parseFloat((ly + hoa + sinh) /3) ;
+    document.write("<br>");
+    document.write("Điểm môn  trung bình :" + tb);
+
+    document.write("<br>");
+    document.write("Bài 2:");
+    document.write("<br>");
+    doc = prompt("Nhập vào độ C : ");
+    let C = parseFloat(doc);
+    document.write("<br>");
+    document.write("Độ C là :" + C);
+    let OF = parseFloat((9*C)/5 + 32);
+    document.write("<br>");
+    document.write("Độ F là :" + OF);
+
+    document.write("<br>");
+    document.write("Bài 3 :");
+    document.write("<br>");
+    let bankinh = prompt("Nhập bào bán kính đường tròn :");
+    document.write("<br>");
+    let R = parseFloat(bankinh);
+    document.write("Bán kính đường tròn là  :" +R);
+    document.write("<br>");
+    let dttron = parseFloat(R*R*3.14);
+    document.write("<br>");
+    document.write("Diện tích hình tròn là :" + dttron);
+    document.write("<br>");
+    document.write("Bài 4 :");
+    document.write("<br>");
+    let chuvitron = parseFloat((R+R)*3.14);
+    document.write("<br>");
+    document.write("chu vi  hình tròn là :" + chuvitron);
+
+</script>
+</body>
+</html>

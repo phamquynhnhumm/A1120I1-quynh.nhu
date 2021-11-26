@@ -1,0 +1,65 @@
+<div class="container">
+  <form style="font-family: 'Helvetica Neue'" [formGroup]="dicvucreate" (ngSubmit)="onSubmit()">
+    <br>
+    <h1 style="text-align: center; color: #202040"> Thêm mới dịch vụ</h1>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>ID dịch vụ</label>
+        <input formControlName="idDV" type="number" class="form-control" placeholder="id dịch vụ">
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>Tên dịch vụ</label>
+        <input formControlName="tenDV" type="text" class="form-control" placeholder="Tên dịch vụ">
+      </div>
+      <div class="group col-md-6">
+        <label>Diện tích</label>
+        <input formControlName="dienTich" type="number" class="form-control" placeholder="Diện tích">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>Số tầng</label>
+        <input formControlName="soTang" type="number" class="form-control" placeholder="Số tầng">
+      </div>
+      <div class="group col-md-6">
+        <label>Số người tối đa</label>
+        <input formControlName="soNguoiToiDa" type="number" class="form-control" placeholder="số người">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>Chi phí thuê</label>
+        <input formControlName="chiPhiThue" type="number" class="form-control" placeholder="chi phí">
+      </div>
+      <div class="group col-md-6">
+        <label for="inputState">Kiểu thuê</label>
+        <select formControlName="kieuThue" id="inputState" class="form-control">
+          <option selected>Chọn kiểu thuê</option>
+          <option value="theo ngày">Theo ngày</option>
+          <option value="theo tháng">Theo tháng</option>
+          <option value="theo giờ">Theo giờ</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label for="inputState">Trạng thái</label>
+        <select formControlName="trangThai" class="form-control">
+          <option selected>chọn trạng thái</option>
+          <option value="còn phòng">Còn phòng</option>
+          <option value="hết phòng">Hết phòng</option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <button type="submit" style="background:#6f42c1;border-color:#6f42c1" class="btn btn-primary">Thêm mới</button>
+    <a routerLink="/dichvu">
+      <button type="reset" style="background:#D97652;border-color:#D97652" class="btn btn-primary">Hủy</button>
+    </a>
+  </form>
+
+</div>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dùng vòng lặp lồng nhau</title>
+</head>
+<body>
+
+<script>
+    let bang;
+    bang ="<table border='1' cellpadding='3' cellspacing='0'>"
+    for(var i=0;i<=10;i++)
+    {
+        bang = bang +"<tr>";
+        for(var j=1;j<=10;j++)
+        {
+            bang =  bang+ "<td>" + i*j +"</td>";
+        }
+        bang = bang + "</tr>";
+    }
+    bang = bang + "</table>";
+    document.write(bang);
+</script>
+
+</body>
+</html>

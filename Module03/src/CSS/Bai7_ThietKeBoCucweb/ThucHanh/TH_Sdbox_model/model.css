@@ -1,0 +1,16 @@
+.thediv {
+    width: 500px;
+    border: 10px;
+    border-style: solid;
+    margin: 0 auto;
+    padding: 10px;
+    border-color: chartreuse aqua blue blueviolet;
+}
+
+p{
+   border:2px;   /*đường viền*/
+    border-style: dotted; /*Kiểu hiển thị của đường viền*/
+    padding: 5px; /*khoảng cach chữ đến đường viền*/
+    border-color: brown; /*màu sắc*/
+
+}

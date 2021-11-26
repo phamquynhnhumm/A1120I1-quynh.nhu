@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truyền nhân tin nhắn</title>
+</head>
+<body>
+<script>
+    class DT{
+        id;
+        name;
+        tn;
+        constructor(id, name){
+            this.id = id ;
+            this.name = name;
+        }
+        gui(tn)
+        {
+            this.tn = tn;
+        }
+        xem()
+        {
+            return this.tn ;
+        }
+        nhantin(tn,mobi)
+        {
+            mobi.gui(tn);
+        }
+    }
+    let dt1 = new  DT(1,'samsung');
+    let  dt2 = new DT(2,'oppo');
+    dt1.nhantin("xin chào oppp!",dt2);
+    alert(dt2.xem());
+</script>
+
+</body>
+</html>

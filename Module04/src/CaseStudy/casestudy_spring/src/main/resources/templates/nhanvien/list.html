@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .link {
+            background: #2C3E50;
+        }
+
+        .link :hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="~{header :: header1}"></div>
+    <div th:replace="~{menu :: menu1}"></div>
+    <nav>
+        <br>
+        <center>
+            <h2>Danh sách Nhân viên</h2>
+        </center>
+<!--        <form method="get" action="/search">-->
+<!--            <input type="text" name="nameSearch" th:value="${nameSearch}">-->
+<!--            <button>Search</button>-->
+<!--        </form>-->
+        <div class="row">
+            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-3">
+                <button class="link"><a class="nav-link" href="/nhanvien/create" style="color:white;"> + Thêm
+                    mới</a></button>
+            </div>
+        </div>
+        <br>
+
+        <form action="/nhanvien/search" method="get">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-1">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-1">
+                    <label for="">Ten</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <input class="form-control" type="text" name="tennhanvien" th:value="${tennhanvien}">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-1">
+                    <label for="">std</label>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <input class="form-control" type="text" name="sdt" th:value="${sdt}">
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-1">
+                    <label for="">Loai bo phan</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-2">
+
+                    <select class="form-control" th:name="idbophan" id="">
+                        <option value="">Chon loai KH</option>
+                        <option   th:each="bophan:${bophamList}"
+                                th:if="${bophan.idBoPhan}==${idbophan}" selected
+                                th:text="${bophan.tenBoPhan}"
+                                th:value="${bophan.idBoPhan}">
+                        </option>
+                        <option th:each="bophan:${bophamList}"
+                                th:unless="${bophan.idBoPhan}==${idbophan}"
+                                th:text="${bophan.tenBoPhan}"
+                                th:value="${bophan.idBoPhan}">
+                        </option>
+                    </select>
+                </div>
+
+                <br/>
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <button class="btn btn-primary" style="width: 100%;" type="submit">Tim kiem</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="tab-content">
+                    <div class="container">
+                        <p style="color: #005cbf" th:text="${mgs}"></p>
+                        <table class="table table-hover" id="tablenhanvien">
+                            <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <!--                                <th>ngày sinh</th>-->
+                                <!--                                <th >cmnd</th>-->
+                                <!--                                <th >SĐT</th>-->
+                                <th>Email</th>
+                                <!--                                <th>lương</th>-->
+                                <th>Thành phố</th>
+                                <th>Vị trí</th>
+                                <th>Bộ phận</th>
+                                <th>Trình độ</th>
+                                <!--                                <th>Tên_User</th>-->
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="nhanvien1 : ${nhanviens}">
+                                <td id="serviceName" th:text="${nhanvien1.tenNhanVien}"></td>
+                                <!--                                <td th:text="${nhanvien1.ngaysinh}"></td>-->
+                                <!--                                <td th:text="${nhanvien1.sdt}"></td>-->
+                                <!--                                <td th:text="${nhanvien1.socmnd}"></td>-->
+                                <td th:text="${nhanvien1.email}"></td>
+                                <!--                                <td th:text="${nhanvien1.luong}"></td>-->
+                                <td th:text="${nhanvien1.thanhpho}"></td>
+                                <td th:text="${nhanvien1.trinhDo.tenTrinhDo}"></td>
+                                <td th:text="${nhanvien1.viTri.tenViTri}"></td>
+                                <td th:text="${nhanvien1.boPhan.tenBoPhan}"></td>
+                                <!--                                <td th:text="${nhanvien1.usermap.tenUser}"></td>-->
+                                <td>
+                                    <a th:href="@{/nhanvien/edit(id = ${nhanvien1.idNhanVien})}">
+                                        Sửa
+                                    </a>
+                                </td>
+                                <td>
+                                    <button style="background: red" data-toggle="modal" data-target="#exampleModal"
+                                            th:onclick="preparedelete([[${nhanvien1.idNhanVien}]],[[${nhanvien1.tenNhanVien}]])">
+                                        Xóa
+                                    </button>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <div id="exampleModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span id="idNhanVien"></span>
+                                        <p>Bạn có chắc chắn muốn xóa
+                                            <span id="tenNhanVien"></span>
+                                            Không ?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy
+                                        </button>
+                                        <button onclick="deleteService($('#idNhanVien').html())" type="button"
+                                                class="btn btn-default" data-dismiss="modal">
+                                            Xóa
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--    trường hợp chưa search-->
+<!--                        <div th:if="${customerListSearch == null}">-->
+<!--    <span>-->
+<!--        <a th:if="${nhanviens.hasPrevious()}" th:href="@{/nhanvien(page=${nhanviens.number - 1})}">Trước</a>-->
+<!--    </span>-->
+<!--                            <span th:each="pageNo: ${#numbers.sequence(0,nhanviens.totalPages -1)}">-->
+<!--            <a th:href="@{/nhanvien(page = ${pageNo})}" th:text="${pageNo}"></a>-->
+<!--    </span>-->
+
+<!--                            <span>-->
+<!--        <a th:if="${nhanviens.hasNext()}" th:href="@{/nhanvien(page=${nhanviens.number + 1})}">Sau</a>-->
+<!--    </span>-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;                        trường hợp search&ndash;&gt;-->
+<!--                        <div th:if="${customerListSearch != null}">-->
+<!--    <span>-->
+<!--        <a th:if="${nhanviens.hasPrevious()}"-->
+<!--           th:href="@{nhanvien/search(page=${nhanviens.number - 1} , nameSearch=${tennhanvien})}">Trước</a>-->
+<!--    </span>-->
+
+<!--                            <span th:each="pageNo: ${#numbers.sequence(0,nhanviens.totalPages -1)}">-->
+<!--            <a th:href="@{nhanvien/search(page = ${pageNo} , nameSearch=${tennhanvien})}" th:text="${pageNo}"></a>-->
+<!--    </span>-->
+<!--                            <span>-->
+<!--        <a th:if="${nhanviens.hasNext()}"-->
+<!--           th:href="@{nhanvien/search(page=${nhanviens.number + 1}, nameSearch=${tennhanvien})}">Sau</a>-->
+<!--    </span>-->
+<!--                        </div>-->
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div th:replace="~{footer :: footer1}">
+    </div>
+</div>
+
+<script>
+    function preparedelete(idNhanVien, tenNhanVien) {
+
+        $('#idNhanVien').html(idNhanVien)
+        $('#tenNhanVien').html(tenNhanVien)
+    }
+    function deleteService(idNhanVien) {
+        console.log(idNhanVien);
+        $.ajax(
+            {
+                type: 'get',
+                url: "/nhanvien/delete/" + idNhanVien,
+                success: function () {
+                    window.location.href = "http://localhost:8080/nhanvien";
+                }
+            }
+        )
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sdt</title>
+</head>
+<body>
+
+<div>
+    <a href="/create">
+        Thêm mới số đt
+    </a>
+</div>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Number</th>
+
+        </tr>
+        <tr th:each="phone: ${phones}">
+            <td th:text="${phone.id}"></td>
+            <td th:text="${phone.number}"></td>
+        </tr>
+    </table>
+    <div>
+    <span>
+        <a th:if="${phones.hasPrevious()}" th:href="@{/phone(page=${phones.number - 1})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,phones.totalPages -1)}">
+            <a th:href="@{/phone(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+        <span>
+        <a th:if="${phones.hasNext()}" th:href="@{/phone(page=${phones.number + 1})}">Sau</a>
+    </span>
+    </div>
+
+</div>
+
+</body>
+</html>

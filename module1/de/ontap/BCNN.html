@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bội chung nhỏ nhất của hai số</title>
+</head>
+<body>
+<script>
+    let n = prompt('Nhập vào số phần tử trong mảng:');
+    let arr =[];
+    for( let i =0;i <=n ;i ++)
+    {
+        let m  = prompt('Nhạp vào phần tử thứ  '+i +':');
+        arr.push(m);
+
+    }
+    document.write( " các bội chung của 3 và 5 là " );
+    let tong  = 0;
+    for( let  i= 0; i<=arr.length;i ++)
+    {
+        if(arr[i] % 3 == 0 && arr[i] % 5 ==0)
+        {
+          document.write(arr[i] + ',');
+            tong = parseFloat(tong + parseFloat(arr[i]));
+
+        }
+    }
+    document.write("<br>");
+    document.write("Tổng của các bội chung là  :" + tong);
+
+</script>
+</body>
+</html>

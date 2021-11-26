@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới học sinh</title>
+</head>
+<body>
+<h3>chỉnh sửa học sinh</h3>
+<form th:action="@{/edit/(id=${hocsinhs.getId()})}" method="post" th:object="${hocsinhs}">
+    <p>Tên:</p>
+    <input type="text" th:field="*{ten}"/>
+
+    <p>Ngày Sinh:</p>
+    <input type="text" th:field="*{ngaysinh}"/>
+
+
+    <p>Giới Tính:</p>
+        <select th:field="*{gioitinh}">
+            <option th:value="1">Nam</option>
+            <option th:value="0">Nữ</option>
+            <option th:value="2">Không xác đinh</option>
+        </select>
+    <!--&lt;!&ndash;    truyền thống quá nghe :))&ndash;&gt;-->
+<!--    <p th:each="gender,loop : ${listGender}">-->
+<!--        <input type="radio" th:value="${loop.index}" th:field="*{gioitinh}">-->
+<!--        <label th:text="${gender}"></label>-->
+<!--    </p>-->
+
+    <br>
+    <p>Lớp:</p>
+    <select th:field="*{lophoc}">
+        <option th:each="lops: ${hocsinhs.lophoc}" th:text="${hocsinhs.lophoc.tenLop}" th:value="${hocsinhs.lophoc.id}">
+        </option>
+        <option th:each="lop: ${lops}" th:text="${lop.tenLop}" th:value="${lop.id}">
+        </option>
+    </select>
+
+    <input type="submit" value="Sửa">
+</form>
+</body>
+</html>

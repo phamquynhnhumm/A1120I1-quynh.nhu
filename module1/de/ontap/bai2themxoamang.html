@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xóa phần tử x trong mảng!</title>
+</head>
+<body>
+<script>
+    let n = prompt('Nhập số phần tử trong mảng');
+    let arr = [];
+    for( let  i =0;i <n ; i++)
+    {
+        let pt  = prompt("Nhập phần tử thứ " +i + " trong mảng");
+        arr.push(pt);
+    }
+    document.write( "Mảng là  Arr =[" + arr + "]");
+</script>
+<br>
+<label>Nhập vào số muốn xóa</label>
+ <input type="text" name="timkiem" id="timkiem">
+<br>
+<button  type="button" onclick="xoa()">Xóa</button>
+<script>
+
+    function xoa()
+    {
+        let ptxoa = document.getElementById("timkiem").value;
+        alert(ptxoa);
+        for(let i =0; i< n;i ++)
+        {
+            if( arr[i] == ptxoa)
+            {
+                arr.splice(i,1);  /*xóa một phần tử ở vị trí thứ i*/
+            }
+        }
+
+        document.write( "Mảng là  Arr =[" + arr + "]");
+    }
+
+</script>
+
+</body>
+</html>

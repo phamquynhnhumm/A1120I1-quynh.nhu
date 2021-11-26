@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ứng dụng máy tính</title>
+    <script>
+        function cong() {
+            var tt1 = document.getElementById('t1').value;
+            let t1 = parseFloat(tt1);
+            var tt2 = document.getElementById('t2').value;
+            let t2 = parseFloat(tt2);
+            let cong = parseFloat( t1 + t2);
+            document.getElementById('kq').innerHTML = "Result Division :" + cong ;
+        }
+        function tru() {
+            var tt1 = document.getElementById('t1').value;
+            let t1 = parseFloat(tt1);
+            var tt2 = document.getElementById('t2').value;
+            let t2 = parseFloat(tt2);
+            let tru = parseFloat( t1 - t2);
+            document.getElementById('kq').innerHTML = "Result Division :" + tru;
+        }
+        function nhan() {
+            var tt1 = document.getElementById('t1').value;
+            let t1 = parseFloat(tt1);
+            var tt2 = document.getElementById('t2').value;
+            let t2 = parseFloat(tt2);
+            let nhan = parseFloat( t1 * t2);
+            document.getElementById('kq').innerHTML = "Result Division : " + nhan ;
+
+        }
+        function chia() {
+            var tt1 = document.getElementById('t1').value;
+            let t1 = parseFloat(tt1);
+            var tt2 = document.getElementById('t2').value;
+            let t2 = parseFloat(tt2);
+            let chia= parseFloat( t1 / t2);
+            document.getElementById('kq').innerHTML = "Result Division :  " + chia ;
+
+        }
+    </script>
+</head>
+<body>
+<h2>Caculator</h2>
+<input type="text" name="t1" id ="t1">
+<input type="text" name="t2" id = "t2">
+<br>
+<br>
+<button type="button" onclick="cong()">Addition (+) </button>
+<button type="button" onclick="tru()">Subtraction(-) </button>
+<button type="button" onclick="nhan()">Multiplication(X) </button>
+<button type="button" onclick="chia()">Division(/) </button>
+<h3 id = "kq"></h3>
+</body>
+</html>

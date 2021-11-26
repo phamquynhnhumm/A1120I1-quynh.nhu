@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          ntegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .link {
+            background: #2C3E50;
+        }
+
+        .link :hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <nav>
+        <br>
+        <center>
+            <h2>Danh sách khuyến mãi </h2>
+        </center>
+            <div class="col-sm-9">
+                <div class="col-sm-3">
+                    <button class="link"><a class="nav-link" href="/create" style="color:white;"> + Thêm
+                        mới</a></button>
+                </div>
+            </div>
+
+            <form action="/search" method="post">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-1">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-1">
+                        <label>Mức giảm giá : </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-2">
+                        <input class="form-control" type="text" name="mucgiamgia" th:value="${mucgiamgia}">
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-1">
+                        <label>Thời gian bắt đầu: </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-2">
+                        <input class="form-control" type="date" name="tgbatdau" th:value="${tgbatdau}">
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-1">
+                        <label>Thời gian kết thúc </label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-2">
+                        <input class="form-control" type="date" name="tgketthuc" th:value="${tgketthuc}">
+                    </div>
+                    <br>   <br>
+                    <div class="col-sm-12 col-md-6 col-lg-2">
+                        <button class="btn btn-primary" style="width: 100%;" type="submit">Tim kiem</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div class="tab-content">
+                        <div class="container">
+                            <p style="color: #005cbf" th:text="${mgs}"></p>
+                            <table class="table table-hover" id="tablenhanvien">
+                                <thead>
+                                <tr>
+                                    <th>Tiêu đề</th>
+                                    <th>thời gian bắt đầu</th>
+                                    <th>thời gian kết thúc</th>
+                                    <th>Mã giảm giá</th>
+                                    <th>chi tiết</th>
+                                    <th>Sửa</th>
+                                    <th>Xóa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="khuyenmai: ${khuyenmais}">
+                                    <td id="serviceName" th:text="${khuyenmai.tieude}"></td>
+                                    <td th:text="${khuyenmai.thoigianbatdau}"></td>
+                                    <td th:text="${khuyenmai.thoigianketthuc}"></td>
+                                    <td th:text="${khuyenmai.mucgiamgia}"></td>
+                                    <td th:text="${khuyenmai.chitiet}"></td>
+                                    <td>
+                                        <a th:href="@{/edit(id = ${khuyenmai.id})}">
+                                            Sửa
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="button" style="background: red" data-toggle="modal"
+                                                data-target="#exampleModal"
+                                                th:onclick="preparedelete([[${khuyenmai.id}]],[[${khuyenmai.tieude}]])">
+                                            Xóa
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div id="exampleModal" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">
+                                                &times;
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Mã khuyến mãi
+                                                <span id="id"></span>
+
+                                            </p>
+                                            <p>Bạn có chắc chắn muốn xóa
+                                                <span id="tieude"></span>
+                                                Không ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default close" data-dismiss="modal">Hủy
+                                            </button>
+                                            <button onclick="deleteService($('#id').html())" type="button"
+                                                    class="btn btn-default" data-dismiss="modal">
+                                                Xóa
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+    </nav>
+    <br><br>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+<script>
+    function preparedelete(id, tieude) {
+        $('#id').html(id);
+        $('#tieude').html(tieude);
+
+        $('#exampleModal').modal('show')
+        $('.close').click(function () {
+            $('#exampleModal').modal('toggle')
+        });
+    }
+
+    function deleteService(id) {
+        $.ajax(
+            {
+                type: 'get',
+                url: "/delete/" + id,
+                success: function () {
+                    window.location.reload();
+                }
+            }
+        )
+    }
+</script>
+</body>
+</html>

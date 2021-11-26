@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .border-md {
+            border-width: 2px;
+        }
+        body {
+            min-height: 100vh;
+        }
+
+        .form-control:not(select) {
+            padding: 1.5rem 0.5rem;
+        }
+
+        select.form-control {
+            height: 52px;
+            padding-left: 0.5rem;
+        }
+
+        .form-control::placeholder {
+            color: #ccc;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <<br><br>
+        <center><h3>Thêm mới user</h3></center>
+        <div class="row py-5 mt-4 align-items-center">
+            <div class="col-md-3 pr-lg-5 mb-5 mb-md-0">
+            </div>
+            <div class="col-md-5 col-lg-6 ml-auto">
+
+                <form action="/create" method="post" th:object="${users}">
+                    <div class="row">
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                            </div>
+                            <input id="firstName" type="text" th:field="*{ho}" placeholder="Nhập họ"
+                                   class="form-control bg-white border-left-0 border-md"> <br>
+                            <p style="color: red" th:if="${#fields.hasErrors('ho')}" th:errors="*{ho}"></p>
+
+                        </div>
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                            </div>
+                            <input id="lastName" type="text" th:field="*{ten}" placeholder="Nhập tên"
+                                   class="form-control bg-white border-left-0 border-md"> <br>
+                            <p style="color: red" th:if="${#fields.hasErrors('ten')}" th:errors="*{ten}"></p>
+
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                            </div>
+                            <input id="email" type="email" th:field="*{email}" placeholder="Nhập emmail"
+                                   class="form-control bg-white border-left-0 border-md">
+                            <br/>
+                            <span  style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                            </div>
+                            <input id="tuoi" type="number" th:field="*{tuoi}" placeholder="Nhập tuoi"
+                                   class="form-control bg-white border-left-0 border-md"> <br>
+                            <p style="color: red" th:if="${#fields.hasErrors('tuoi')}" th:errors="*{tuoi}"></p>
+
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                            </div>
+                            <input id="sdt" type="text" th:field="*{sdt}" placeholder="Nhập sdt"
+                                   class="form-control bg-white border-left-0 border-md">
+                            <br>
+                            <p  style="color: red" th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}"></p>
+
+                        </div>
+
+
+                        <div class="text-center w-100">
+                            <p class="text-muted font-weight-bold">
+                                <button>submit</button>
+                            </p>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 pr-lg-5 mb-5 mb-md-0">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

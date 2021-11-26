@@ -1,0 +1,14 @@
+<p>calculator works! xinc haod nuhw</p>
+<input type="number"  [value]="soa" (change)="soA($event)">
+<select  [value]="pheptinh" (change)="Pheptinh($event)">
+  <option value='+'>+</option>
+  <option value='-'>-</option>
+  <option value='*'>*</option>
+  <option value='/'>/</option>
+</select>
+<br>
+<input type="number"  [value]="sob" (change)="soB($event)">
+<button  (click)="calculate()">
+  tính toán
+</button>
+<p> Kết quả :  {{kq}}</p>

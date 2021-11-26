@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+    <center><h3>Danh sách user</h3></center>
+<table class="table table-hover">
+
+    <thead>
+    <tr>
+        <th>Họ</th>
+        <th>Tên</th>
+        <th>Sđt</th>
+        <th>Tuổi</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.ho}"></td>
+        <td th:text="${user.ten}"></td>
+        <td th:text="${user.sdt}"></td>
+        <td th:text="${user.tuoi}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+    </tbody>
+</table>
+    <div>
+    <span>
+        <a th:if="${users.hasPrevious()}" th:href="@{/phone(page=${users.number - 1})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,users.totalPages -1)}">
+            <a th:href="@{/user(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+        <span>
+        <a th:if="${users.hasNext()}" th:href="@{/user(page=${users.number + 1})}">Sau</a>
+    </span>
+    </div>
+
+    <center><button style="background: blue"><a style="color: black" href="/create">
+        Thêm mới user
+    </a></button></center>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu Ngang</title>
+    <style>
+        .menu
+        {
+            border: 2px black;
+            background-color: black;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+        }
+        .menu li a
+        {
+            text-decoration: none;
+            /*color: #FAF5FF;*/
+        }
+        .menu ul
+        {
+            list-style: none;
+        }
+        .menu ul > li
+        {
+            display: inline-block;
+            height: 30px;
+            width: 160px;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .menu ul ul{
+            position: absolute;
+            top: 30px;
+            background: black;
+
+        }
+        .menu >ul >li >a
+        {
+            color: #FAF5FF;
+            padding: 6px;
+        }
+        .menu  li:hover
+        {
+            background-color: brown;
+        }
+
+        .menu ul ul{
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            visibility: hidden;
+        }
+
+        .menu ul li:hover ul{
+            visibility: visible;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem1</a>
+            <ul>
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem2</a>
+            <ul>
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Sem3</a>
+
+        </li>
+        <li><a href="#">Sem4</a>
+
+        </li>
+
+
+    </ul>
+</div>
+
+
+</body>
+</html>

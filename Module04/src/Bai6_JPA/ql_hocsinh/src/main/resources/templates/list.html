@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị danh sách học sinh</title>
+</head>
+<body>
+
+<a href="/create">Thêm mới học sinh</a>
+<span style="color: blue" th:text="${msg}"></span>
+
+<!--<form method="get" action="/search">-->
+<!--    <input type="text" name="timkiem" th:value="${timkiem}">-->
+<!--   <input type="submit" value="Tìm kiếm">-->
+<!--</form>-->
+<!--$: biểu thức với biến-->
+<!--*: thuộc tính-->
+<!--#: message-->
+<!--~: đoạn thơ :)) -->
+
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Id</th>
+        <th>Tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Lớp</th>
+        <th>Edit</th>
+        <th>Xoa</th>
+    </tr>
+    <tr th:each="hocsinh,loop : ${hocsinhs}">
+        <td th:text="${loop.index+1}"></td>
+        <td th:text="${hocsinh.id}"></td>
+        <td th:text="${hocsinh.ten}"></td>
+        <td th:text="${hocsinh.ngaysinh}"></td>
+        <td th:switch="${hocsinh.gioitinh}">
+            <span th:case="0">Nữ</span>
+            <span th:case="1">Nam</span>
+            <span th:case="*">BEDE</span>
+        </td>
+        <td th:text="${hocsinh.lophoc.tenLop}"></td>
+        <td> <a th:href= "@{edit/(idhocsinh = ${hocsinh.id})}">Edit</a></td>
+        <td><a th:href="@{delete/(id= ${hocsinh.id})}">Delete</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

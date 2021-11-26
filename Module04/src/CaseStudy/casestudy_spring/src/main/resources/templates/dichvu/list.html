@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List Dịch Vụ</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .link {
+            background: #2C3E50;
+        }
+
+        .link :hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="~{header :: header1}"></div>
+    <div th:replace="~{menu :: menu1}"></div>
+    <nav>
+        <br>
+        <center>
+            <h2>Danh sách Dịch Vụ</h2>
+        </center>
+        <form method="get" action="/search">
+            <input type="text" name="nameSearch" th:value="${nameSearch}">
+            <button>Search</button>
+        </form>
+        <div class="row">
+            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-3">
+                <button class="link"><a class="nav-link" href="/dichvu/create" style="color:white;"> + Thêm
+                    mới</a></button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="tab-content">
+                    <div class="container">
+                        <p style="color: #005cbf" th:text="${mgs}"></p>
+                        <table class="table table-hover" id="tablenhanvien">
+                            <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <th>Diện tích</th>
+                                <th>Chi phí</th>
+                                <th>Số Người</th>
+                                <th>Kiểu Thuê</th>
+                                <th>Loại Dịch Vụ</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="dichvu1 : ${dichvus}">
+                                <td th:text="${dichvu1.tenDichVu}"></td>
+                                <td th:text="${dichvu1.dienTich}"></td>
+                                <td th:text="${dichvu1.chiPhi}"></td>
+                                <td th:text="${dichvu1.soNguoi}"></td>
+                                <td th:text="${dichvu1.kieuThues.tenKieuThue}"></td>
+                                <td th:text="${dichvu1.loaiDVs.tenLoaiDV}"></td>
+                                <td>
+                                    <a th:href="@{/dichvu/edit(id = ${dichvu1.idDichVu})}">
+                                        Sửa
+                                    </a>
+                                </td>
+                                <td>
+                                    <button style="background: red" data-toggle="modal" data-target="#exampleModal"
+                                            th:onclick="preparedelete([[${dichvu1.idDichVu}]],[[${dichvu1.tenDichVu}]])">
+                                        Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div id="exampleModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span id="idDichVu"></span>
+                                        <p>Bạn có chắc chắn muốn xóa
+                                            <span id="tenDichVu"></span>
+                                            Không ?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy
+                                        </button>
+                                        <button onclick="deleteService($('#idDichVu').html())" type="button"
+                                                class="btn btn-default" data-dismiss="modal">
+                                            Xóa
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        trường hợp chưa search
+                        <div th:if="${nameSearch == null}">
+    <span>
+        <a th:if="${dichvus.hasPrevious()}" th:href="@{/dichvu(page=${dichvus.number - 1})}">Trước</a>
+    </span>
+                            <span th:each="pageNo: ${#numbers.sequence(0,dichvus.totalPages -1)}">
+            <a th:href="@{/dichvu(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+                            <span>
+        <a th:if="${dichvus.hasNext()}" th:href="@{/dichvu(page=${dichvus.number + 1})}">Sau</a>
+    </span>
+                        </div>
+
+                        <!--                        trường hợp search-->
+                        <div th:if="${nameSearch != null}">
+    <span>
+        <a th:if="${dichvus.hasPrevious()}"
+           th:href="@{/search(page=${dichvus.number - 1} , nameSearch=${nameSearch})}">Trước</a>
+    </span>
+
+                            <span th:each="pageNo: ${#numbers.sequence(0,dichvus.totalPages -1)}">
+            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>
+    </span>
+                            <span>
+        <a th:if="${dichvus.hasNext()}"
+           th:href="@{/search(page=${dichvus.number + 1}, nameSearch=${nameSearch})}">Sau</a>
+    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div th:replace="~{footer :: footer1}">
+    </div>
+</div>
+
+<script>
+    function preparedelete(idDichVu, tenDichVu) {
+
+        $('#idDichVu').html(idDichVu)
+        $('#tenDichVu').html(tenDichVu)
+    }
+
+    function deleteService(idDichVu) {
+        console.log(idDichVu);
+        $.ajax(
+            {
+                type: 'get',
+                url: "/dichvu/delete/" + idDichVu,
+                success: function () {
+                    window.location.href = "http://localhost:8080/dichvu";
+                }
+            }
+        )
+    }
+</script>
+</body>
+</html>

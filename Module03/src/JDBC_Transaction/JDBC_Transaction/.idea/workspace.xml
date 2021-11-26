@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="491c5ffe-ede9-4809-a886-15bcc73e2031" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/controller/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/repository/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/repository/UserRepositorylmpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/src/service/UserServicelmpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/img/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/img/avatar_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/user/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/user/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/user/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servlet/Bai13_JDBC_Querying_Transaction/Thuchanh/GoiMysqlUSer/web/user/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CodeGym-A1120I1_Pham_Thi_Quynh_Nhu_tuan1_module3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CodeGym-A1120I1_Pham_Thi_Quynh_Nhu_tuan1_module3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CSS/Bai8_BootstrapCoBan/BaiTap/Landing_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CSS/Bai8_BootstrapCoBan/BaiTap/Landing_Page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DesignLayout/CSS Position.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DesignLayout/GridView_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DesignLayout/GridView_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/WEB-INF/classes/controller/SanphamServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/WEB-INF/classes/controller/SanphamServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/WEB-INF/classes/repository/SanphamRepositorylmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/WEB-INF/classes/repository/SanphamRepositorylmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/sanpham/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/artifacts/quanlysanpham_war_exploded/sanpham/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/production/quanlysanpham/controller/SanphamServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/production/quanlysanpham/controller/SanphamServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/production/quanlysanpham/repository/SanphamRepositorylmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/out/production/quanlysanpham/repository/SanphamRepositorylmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/controller/SanphamServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/controller/SanphamServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/repository/SanphamRepositorylmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/repository/SanphamRepositorylmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/service/Sanphamservicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/src/service/Sanphamservicelmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/web/sanpham/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/baitap/quanlysanpham/web/sanpham/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/java_web_mvc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/java_web_mvc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/WEB-INF/classes/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/WEB-INF/classes/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/WEB-INF/classes/service/CustomerServicelmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/WEB-INF/classes/service/CustomerServicelmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/customer/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/customer/delete.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/customer/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/customer/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/customer/view.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/artifacts/java_web_mvc_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/production/java_web_mvc/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/production/java_web_mvc/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/production/java_web_mvc/service/CustomerServicelmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/out/production/java_web_mvc/service/CustomerServicelmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/controller/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/service/CustomerServicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/src/service/CustomerServicelmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/web/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai11_MVC_Model/thuchanh/java_web_mvc/web/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/out/artifacts/BT_Users_war_exploded/WEB-INF/classes/repository/UserRepositorylmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/out/artifacts/BT_Users_war_exploded/WEB-INF/classes/repository/UserRepositorylmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/out/production/BT_Users/repository/UserRepositorylmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/out/production/BT_Users/repository/UserRepositorylmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/src/repository/UserRepositorylmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/BaiTap/BT_Users/src/repository/UserRepositorylmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/ThucHanh/TH_User/src/repository/UserRepositorylmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/ThucHanh/TH_User/src/repository/UserRepositorylmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/ThucHanh/users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai12_JDBC_CRUD/ThucHanh/users.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai9_TongquanungdungWeb/Baitap/chietkhau/out/artifacts/chietkhau_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai9_TongquanungdungWeb/Baitap/chietkhau/out/artifacts/chietkhau_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/Bai9_TongquanungdungWeb/Baitap/chietkhau/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/Bai9_TongquanungdungWeb/Baitap/chietkhau/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/JDBC/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/JDBC/JDBC.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servlet/democase/web/benhan/list.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1uIM3goosFSkt4sMBjE6yA69P3g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="491c5ffe-ede9-4809-a886-15bcc73e2031" name="Default Changelist" comment="" />
+      <created>1624348452752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624348452752</updated>
+      <workItem from="1624348454259" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

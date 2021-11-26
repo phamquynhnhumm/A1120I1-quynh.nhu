@@ -1,0 +1,1 @@
+ String b = Character.toString(ar); // ép kiểu char sang string

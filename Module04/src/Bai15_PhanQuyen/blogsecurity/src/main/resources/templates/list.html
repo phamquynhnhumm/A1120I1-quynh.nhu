@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Blog</title>
+</head>
+<body>
+
+<div>
+ <a  href="/create">
+        Thêm mới blogs
+    </a>
+</div>
+<a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a>
+<a th:if="${#request.userPrincipal == null}" th:href="@{/login}">login</a>
+
+<h3 th:if="${#request.userPrincipal != null}">Xin chào: <span th:utext="${#request.userPrincipal.name}"></span></h3>
+
+
+<form method="get" action="/search">
+    <input type="text" name="nameSearch" th:value="${nameSearch}">
+    <button>Search</button>
+</form>
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nội dung</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+        <tr th:each="blog: ${blogs}">
+            <td th:text="${blog.id}"></td>
+            <td tyle="text-overflow:ellipsis;" th:text="${blog.noidung}"></td>
+            <td>
+                    <a th:href="@{edit(id= ${blog.id})}">Edit</a>
+            </td>
+            <td>
+            <a  th:href="@{delete(id=${blog.id})}">xóa</a>
+            </td>
+        </tr>
+    </table>
+
+    <!--    trường hợp chưa search-->
+    <div th:if="${nameSearch == null}">
+    <span>
+        <a th:if="${blogs.hasPrevious()}" th:href="@{/blog(page=${blogs.number - 1})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,blogs.totalPages -1)}">
+            <a th:href="@{/blog(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+        <span>
+        <a th:if="${blogs.hasNext()}" th:href="@{/blog(page=${blogs.number + 1})}">Sau</a>
+    </span>
+    </div>
+
+    <!--    trường hợp search-->
+    <div th:if="${nameSearch != null}">
+    <span>
+        <a th:if="${blogs.hasPrevious()}" th:href="@{/search(page=${blogs.number - 1} , nameSearch=${nameSearch})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,blogs.totalPages -1)}">
+            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>
+    </span>
+        <span>
+        <a th:if="${blogs.hasNext()}" th:href="@{/search(page=${blogs.number + 1}, nameSearch=${nameSearch})}">Sau</a>
+    </span>
+    </div>
+
+</div>
+
+</body>
+</html>

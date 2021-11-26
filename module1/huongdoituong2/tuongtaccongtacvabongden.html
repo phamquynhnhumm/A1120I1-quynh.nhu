@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<h3>Bóng đèn</h3>
+<img id = "anh" src="img/dentat.gif">
+<label>Trạng thái :</label>
+<button onclick="bat_tat()" id="button()">Bật</button>
+<p id="trangthai"></p>
+<script>
+   class  congtac{
+      constructor(tragnthai) {
+            this.trangthai = trangthai;
+        }
+        nut()
+        {
+            this.trangthai !=this.trangthai ;
+        }
+    }
+   class den{
+       constructor(status) {
+           this.status = status;
+       }
+       trangthai(status)
+       {
+           if(this.status.trangthai === true)
+           {
+               document.getElementById("anh").src = "img/densang.gif";
+               document.getElementById("trangthai").innerText = "Đèn đang bật !"
+               document.getElementById("nut").innerText ="tắt";
+           }
+           else {
+               document.getElementById("anh").src = "img/dentat.gif";
+               document.getElementById("trangthai").innerText ="Đèn đang tắt!";
+               document.getElementById("nut").innerText ="bật";
+           }
+       }
+   }
+
+</script>
+</body>
+</html>

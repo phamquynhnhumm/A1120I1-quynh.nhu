@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 1</h2>
+<h2>
+    <b>Kien tra a có chia hết cho b hay không?</b></h2>
+<label>Số a :</label>
+<input type="text" id ='a'>
+<label>Số b :</label>
+<input type="text" id ='b'>
+<button type="button" onclick="ketqua1()">Kết quả</button>
+<h4 style="color: tomato" id ='bai1'></h4>
+<script>
+    function ketqua1() {
+        var a = document.getElementById('a').value;
+        var b= document.getElementById('b').value
+        if( a% b ==0)
+            document.getElementById('bai1').innerText = a + ' chia hết cho ' + b;
+        else
+            document.getElementById('bai1').innerText = a + '  không chia hết cho ' + b;
+    }
+</script>
+ <center><h2>Bài 2</h2></center>
+<label>Tuoi</label>
+<input type="text" id="tuoi">
+<button type="button" onclick="ketqua2()">Kết quả</button>
+<h4 style="color: tomato" id ='bai2'></h4>
+<script>
+    function ketqua2() {
+         var  tuoi  = document.getElementById('tuoi')
+        if(tuoi.value >16)
+        {
+            document.getElementById('bai2').innerText = ' Bạn đủ tuổi vào lớp 10 !';
+        }else
+            document.getElementById('bai2').innerText = ' Bạn không đủ tuổi vào lớp 10! ';
+    }
+</script>
+<center><h2>Bài 3</h2></center>
+<label>Số nguyên :</label>
+<input type="text" id="songuyen">
+<button type="button" onclick="ketqua3()">Kết quả</button>
+<h4 style="color: tomato" id ='bai3'></h4>
+<script>
+    function ketqua3() {
+        var  songuyen  = document.getElementById('songuyen')
+        if(songuyen.value > 0)
+        {
+            document.getElementById('bai3').innerText = songuyen.value + 'lớn hơn  0';
+        }else
+            document.getElementById('bai3').innerText = songuyen.value + 'bé hơn  0';
+    }
+</script>
+
+<center><h2>Bài 4</h2></center>
+<label>số a :</label>
+<input type="text" id="soa">
+<label>số b :</label>
+<input type="text" id="sob">
+<label>số c :</label>
+<input type="text" id="soc">
+<button type="button" onclick="ketqua4()">Kết quả</button>
+<h4 style="color: tomato" id ='bai4'></h4>
+<script>
+    var a= document.getElementById('soa');
+    var b= document.getElementById('sob');
+    var c= document.getElementById('soc');
+    function ketqua4() {
+        var  max =parseInt(a.value) ;
+        if(parseInt(b.value) > max)
+            max =parseInt( b.value);
+        if(parseInt(c.value) > max)
+            max = parseInt(c.value);
+       else
+           max =max
+        document.getElementById('bai4').innerText = " số lớn nhất  trong 3 số là  : " + max ;
+    }
+</script>
+
+
+</body>
+</html>

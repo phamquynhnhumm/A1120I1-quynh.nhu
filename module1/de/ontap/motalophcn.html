@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mycanvars" width="400px" height="200px" style="border: aqua"></canvas>
+<script>
+    class  hcn {
+        constructor(dai,rong) {
+            this.dai = dai ;
+            this.rong = rong;
+        }
+        getdai()
+        {
+            return this.dai;
+        }
+        getrong()
+        {
+            return this.rong;
+        }
+        setdai(dai)
+        {
+            this.dai = dai;
+        }
+        setrong(rong)
+        {
+            this.rong = rong;
+        }
+        dientich()
+        {
+            return this.dai *this.rong;
+        }
+    }
+    var hinh = new hcn(5,7);
+    document.write("diện tích  " +hinh.dientich());
+    hinh.setdai(9);
+    hinh.setrong(6);
+    document.write("diện tích  " +hinh.dientich());
+      let canvas = document.getElementById("mycanvars");
+      let ctx = canvas.msGetRegionContent('2d');
+      ctx.fillStyle = 'red';
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra x có thuộc dãy Fibonacci</title>
+</head>
+<body>
+<script>
+    let x = prompt("Nhập vào số bạn muốn kiểm tra có phải số Fibonacci không :  /n  nếu đúng in true ,  ngược lại false ");
+    function  kt (x)
+    {
+        let f0 = 0;
+        let dem = 0;
+        let  f1= 1;
+        let arr = [] ;
+        let  fibo = [];
+        for ( let  i=2 ;i<=1000;i++)
+        {
+            arr[0] = f0;
+            arr[1] = f1;
+            arr[i] = arr[i-1] + arr[i-2];
+            fibo.push(arr[i]);
+
+        }
+        for (let  j=  0; j <=1000 ;j ++ )
+        {
+            if ( x  == fibo[j]) {
+                 dem ++;
+            }
+        }
+        if(dem == 1)
+        {
+            alert(true);
+        }
+       else
+        {
+            alert(false);
+        }
+    }
+    kt(x);
+</script>
+</body>
+</html>

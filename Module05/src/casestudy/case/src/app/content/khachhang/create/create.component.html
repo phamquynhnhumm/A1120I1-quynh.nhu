@@ -1,0 +1,61 @@
+<div class="container">
+  <form style="font-family: 'Helvetica Neue'" [formGroup]="khachhangCreate" (ngSubmit)="onSubmit()"> <br>
+    <h1 style="text-align: center; color: #202040"> Thêm mới khách hàng</h1>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>ID KH</label>
+        <input
+          formControlName="idKH" type="text" class="form-control" placeholder="id  nv">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Họ tên </label>
+        <input  formControlName="tenKH" type="text" class="form-control"  placeholder="họ tên">
+      </div>
+      <div class="group col-md-6">
+        <label>Loại khách hàng</label>
+        <select   formControlName="loaiKh" class="form-control">
+          <option selected>Chọn loại khách hàng</option>
+          <option value="khách Vip">Khách Vip nè</option>
+          <option value="Khách bìn thường">Khách bìn hương nè</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Ngày sinh</label>
+        <input type="date" formControlName="ngaySinh"  class="form-control" placeholder="ngày sinh">
+      </div>
+      <div class="group col-md-6">
+        <label >Số cmnd</label>
+        <input type="number" formControlName="soCMND"  class="form-control"  placeholder="số cmnd">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label >Số điện thoai</label>
+        <input type="number" formControlName="sDT"  class="form-control" placeholder="sdt">
+      </div>
+      <div class="group col-md-6">
+        <label >Email</label>
+        <input type="email" formControlName="eMail"  class="form-control"  placeholder="email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="group col-md-6">
+        <label>Lương</label>
+        <input type="number" class="form-control" formControlName="luong"  placeholder="lương">
+      </div>
+      <div class="group col-md-6">
+        <label >Địa chỉ</label>
+        <input type="text" class="form-control" formControlName="diaChi"  placeholder="địa chỉ">
+      </div>
+    </div>
+    <br>
+    <button type="submit" style="background:#6f42c1;border-color:#6f42c1" class="btn btn-primary">Thêm mới</button>
+    <a routerLink="/khachhang"> <button type="reset" style="background:#D97652;border-color:#D97652" class="btn btn-primary">Hủy</button>  </a>
+  </form>
+</div>
+
+

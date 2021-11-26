@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List khách hàng</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .link {
+            background: #2C3E50;
+        }
+
+        .link :hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="~{header :: header1}"></div>
+    <div th:replace="~{menu :: menu1}"></div>
+    <nav>
+        <br>
+        <center>
+            <h2>Danh sách Khách Hàng</h2>
+        </center>
+        <form method="get" action="/search">
+            <input type="text" name="nameSearch" th:value="${nameSearch}">
+            <button>Search</button>
+        </form>
+        <div class="row">
+            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-3">
+                <button class="link"><a class="nav-link" href="/dichvu/create" style="color:white;"> + Thêm
+                    mới</a></button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="tab-content">
+                    <div class="container">
+                        <p style="color: #005cbf" th:text="${mgs}"></p>
+                        <table class="table table-hover" id="tablenhanvien">
+                            <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <th>Diện tích</th>
+                                <th>Chi phí</th>
+                                <th>Số Người</th>
+                                <th>Kiểu Thuê</th>
+                                <th>Loại Dịch Vụ</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="dichvu1 : ${dichvus}">
+                                <td th:text="${dichvu1.tenDichVu}"></td>
+                                <td th:text="${dichvu1.dienTich}"></td>
+                                <td th:text="${dichvu1.chiPhi}"></td>
+                                <td th:text="${dichvu1.soNguoi}"></td>
+                                <td th:text="${dichvu1.kieuThues.tenKieuThue}"></td>
+                                <td th:text="${dichvu1.loaiDVs.tenLoaiDV}"></td>
+                                <td>
+                                    <a th:href="@{/dichvu/edit(id = ${dichvu1.idDichVu})}">
+                                        Sửa
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/dichvu/delete(id = ${dichvu1.idDichVu})}">
+                                        Xóa
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <!--    trường hợp chưa search-->
+<!--                        <div th:if="${nameSearch == null}">-->
+<!--    <span>-->
+<!--        <a th:if="${dichvus.hasPrevious()}" th:href="@{/dichvu(page=${dichvus.number - 1})}">Trước</a>-->
+<!--    </span>-->
+<!--                            <span th:each="pageNo: ${#numbers.sequence(0,dichvus.totalPages -1)}">-->
+<!--            <a th:href="@{/dichvu(page = ${pageNo})}" th:text="${pageNo}"></a>-->
+<!--    </span>-->
+
+<!--                            <span>-->
+<!--        <a th:if="${dichvus.hasNext()}" th:href="@{/dichvu(page=${dichvus.number + 1})}">Sau</a>-->
+<!--    </span>-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;                        trường hợp search&ndash;&gt;-->
+<!--                        <div th:if="${nameSearch != null}">-->
+<!--    <span>-->
+<!--        <a th:if="${dichvus.hasPrevious()}"-->
+<!--           th:href="@{/search(page=${dichvus.number - 1} , nameSearch=${nameSearch})}">Trước</a>-->
+<!--    </span>-->
+
+<!--                            <span th:each="pageNo: ${#numbers.sequence(0,dichvus.totalPages -1)}">-->
+<!--            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>-->
+<!--    </span>-->
+<!--                            <span>-->
+<!--        <a th:if="${dichvus.hasNext()}"-->
+<!--           th:href="@{/search(page=${dichvus.number + 1}, nameSearch=${nameSearch})}">Sau</a>-->
+<!--    </span>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div th:replace="~{footer :: footer1}">
+    </div>
+</div>
+</body>
+</html>

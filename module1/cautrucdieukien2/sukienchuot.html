@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+<img src="./img/bong.jpg" id="bong">
+<p><b>Click button below to move the image to rigth</b></p>
+<input type="button" onclick="dichuyen()"value="click me!">
+<script>
+    function chuyen() {
+        hinh = document.getElementById('bong');
+        hinh.style.position ='relative';
+        hinh.style.left = '0px';
+    }
+    function dichuyen() {
+        hinh.style.left = parseInt(hinh.style.left) + 10 +'px';
+    }
+    window.onload = chuyen();// khi  chạy xong hêt mới chạy lênh này. nếu ko có lệnh này trường hợp ảnh chưa đc tải lên mà js đã chạy thì hinh.style.left sẽ rỗng nên cần thực hiện hàm chuyển động cuối cùng
+    // let direction = +1;
+    // let ball = document.getElementById('myImage');
+    // ball.style.position = 'relative';
+    // ball.style.left = '0px';
+    //
+    // setInterval(()=>{
+    //     ball.style.left = parseInt(ball.style.left) + direction + 'px';
+    //     if (parseInt(ball.style.left)>200 || parseInt(ball.style.left)<0){direction*=-1}
+    // },10);
+</script>
+</body>
+</html>

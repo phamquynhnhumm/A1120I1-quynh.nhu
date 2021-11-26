@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hiển thị danh sách học sinh</title>
+</head>
+<body>
+<!--<span th:if="${msg} != null">-->
+<!--    ${msg}-->
+<!--</span>-->
+<div>
+    <a href="/create">Thêm mới học sinh</a>
+</div>
+
+<form action="/search" method="get">
+    <input type="text" name="tensearch" th:value="${tensearch}">
+    <button>Tìm kiếm</button>
+</form>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Số điện thoại</th>
+            <th>Lớp</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+        <tr th:each="hocsinh : ${hocsinhs}">
+            <td th:text="${hocsinh.id}"></td>
+            <td th:text="${hocsinh.ten}"></td>
+            <td th:text="${hocsinh.ngaysinh}"></td>
+            <td th:text="${hocsinh.sdt}"></td>
+            <td th:text="${hocsinh.lophoc.tenlop}"></td>
+            <td><a th:href="@{/edit/(id = ${hocsinh.id})}">Edit</a> </td>
+            <td><a th:href="@{/delete/(id = ${hocsinh.id})}">delete</a> </td>
+        </tr>
+
+    </table>
+    <div th:if="${tensearch == null}">
+        <span>
+            <a th:if="${hocsinhs.hasPrevious()}" th:href="@{/hocsinh(page=${hocsinhs.number - 1})}">Trước</a>
+        </span>
+        <span th:each="pageNo: ${#numbers.sequence(0, hocsinhs.totalPages -1)}">
+            <a th:href="@{/hocsinh(page = ${pageNo})}" th:text="${pageNo}"></a>    </span>
+        <span>
+            <a th:if="${hocsinhs.hasNext()}" th:href="@{/hocsinh(page=${hocsinhs.number + 1})}">Sau</a>
+        </span>
+    </div>
+
+
+    <div th:if="${tensearch != null}">
+        <span>
+            <a th:if="${hocsinhs.hasPrevious()}" th:href="@{/search(page=${hocsinhs.number - 1}, tensearch = ${tensearch})}">Trước</a>
+        </span>
+        <span th:each="pageNo: ${#numbers.sequence(0, hocsinhs.totalPages -1)}">
+            <a th:href="@{/search(page = ${pageNo},tensearch = ${tensearch})}" th:text="${pageNo}"></a>    </span>
+        <span>
+            <a th:if="${hocsinhs.hasNext()}" th:href="@{/search(page=${hocsinhs.number + 1},tensearch = ${tensearch})}">Sau</a>
+        </span>
+    </div>
+
+</div>
+</body>
+</html>

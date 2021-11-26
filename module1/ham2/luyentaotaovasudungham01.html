@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dùng hàm 01</title>
+</head>
+<body>
+<script>
+    //bài 1 :
+    function alertMessage() {
+        alert("Xin  chào !");
+    }
+    alertMessage();
+
+
+</script>
+
+<script>
+    //bai2
+    var so = prompt("Nhập vào một số!");
+    function tang(so) {
+
+        var kq = parseInt(so*1 +1)
+        alert(kq);
+    }
+    tang(so);
+</script>
+<script>
+    //bài 3
+    let so1 = prompt("Hãy nhập vào số thứ nhất  :");
+    let so2 =prompt("Hãy nhập vào số thứ hai :");
+    function tong(so1,so2) {
+        if(so1 >so2)
+        {
+            alert("Số thứ nhất lớn hơn số thứ hai !");
+        }
+        if (so2>so1)
+        {
+            alert("Số thứ hai lớn hơn số thứ nhất!");
+        }
+        let tong = parseInt(so1*1 + so2*1);
+        alert("Tổng của hai số đó là   :" + tong)
+    }
+    tong(so1,so2);
+</script>
+
+<script>
+    //bài 4
+
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+        alert(result);
+    }
+    result = 0;
+    result = addNumbers();
+</script>
+<script>
+    // bài 5
+    let ten = prompt("Hãy nhập vào tên ngôi sao :")
+    let mang1 = ["Polaris","Aldebaran","Dened","Vega","Altair","Dubhe","Regulus"];
+    let mang2 =["Ursa Minor"," Tarurus", "Cygnus", "Lyra"," Aquila", "Ursa Major","Leo"];
+
+function kiemtra(mang1) {
+    for (var i =0;i<mang1.length;i++)
+    {
+        if( ten == mang1[i]) {
+            alert(" ngôi sao " + mang1[i] + "  thuôc chòm sao " + mang2[i]);
+        }
+    }
+}
+    kiemtra(mang1);
+</script>
+</body>
+</html>

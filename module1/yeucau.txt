@@ -1,0 +1,33 @@
+PROJECT 5: ĐỒ ÁN CÔNG NGHỆ PHẦN MỀM
+
+1) Yêu cầu về kiến thức: áp dụng kiến thức đã được học trong các môn học liên quan đến phát triển phần mềm như Công nghệ phần mềm, Phân tích và thiết kế hướng đối tượng, Lập trình mạng, … để thực hiện hoàn chỉnh một dự án phát triển phần mềm (Website).
+
+2) Yêu cầu sản phẩm:
+
+- Sản phẩm hoàn thiện (Website) có giao diện tương tác người dùng (Có Web Admin và Web end-user).
+
+- Sử dụng back-end tùy chọn, front-end ít nhất phải sử dụng bootstrap (tốt hơn có thể tìm hiểu sử dụng: Angular, React JS, Vue JS, …)
+
+- Có login & phân quyền, kết nối CSDL, được phép sử dụng các thư viện.
+
+- Áp dụng mô hình MVC để phát triển ứng dụng Web, …;
+  Có sử dụng Lập trình mạng (lập trình TCP, UDP, …).
+
+- Có tài liệu kỹ thuật: đặc tả, thiết kế, …
+
+- Nếu có thể sử dụng các công cụ hỗ trợ quản lý mã nguồn, quản lý task (git & trello, …)
+
+3) Mỗi nhóm từ 3-4 sinh viên, đề tài sinh viên tự lựa chọn và phải thông qua GVHD.
+
+
+
+
+
+
+ -  yêu cầu : 		
+	+ trang Đăng nhập  , Đăng kí, ( Web Admin và Web end-user : Tức phân quyền người dùng admin-có tất cả các quyền và nhân viên-nv kho(quản lý kho)-nv bán hàng(quán lý đơn hàng)-, khách hàng(chọn sản phẩm) truyền về nv bán hành)
+	+  	front-end : giao diện mà người dùng tương tác bên ngoài. (  chúng ta tập trung sử dùng Css, và React, js, html... )
+		back-end : máy chủ, ứng dụng và cơ sở dữ liệu,
+	+    git  :  lưu trữ code ( code xong đẩy lên ni nha mấy cha mấy mẹ)
+	     trello : Phân chia  công việc và deadline trên ni nhé
+	+ lập trình TCP, UDP : Truyền nhận tương tác giữa các máy  

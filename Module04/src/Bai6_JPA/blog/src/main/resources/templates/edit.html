@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit khách hàng</title>
+</head>
+<body>
+<h3>Edit khách hàng</h3>
+<form th:action="@{/edit/(id=${blogs.id})}" method="post" th:object="${blogs}">
+    <label>id:</label>
+    <input type="text" th:field="*{id}" readonly/>
+
+    <label>Nội dung:</label>
+<!--    <input type="" th:field="*{noidung}"/>-->
+    <textarea type="textarea" th:field="*{noidung}"  rows="6"> </textarea>
+
+
+    <input type="submit" value="thêm mới">
+</form>
+</body>
+</html>

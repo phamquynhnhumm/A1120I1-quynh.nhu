@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div th:fragment="header1">
+
+<header >
+    <div class="row" >
+        <div class="col-sm-8 shopping-mall">
+            <div style="padding:20px;color: black">
+                <h6> <i><center>HỆ THỐNG QUẢN LÝ FURAMA RESORT ĐÀ NẴNG</center> </i></h6>
+            </div>
+        </div>
+<!--        <%-->
+<!--        if(session.getAttribute("ten") != null){-->
+<!--        %>-->
+        <div class="col-sm-1">
+            <img class="avatar" src="img/Yochan.png" width="60px" height="60px">
+        </div>
+<!--        <%} %>-->
+        <div class="col-sm-3">
+<!--            <h4> <i><%=session.getAttribute("ten") %></i> </h4>-->
+<!--            <%-->
+<!--            if(session.getAttribute("quyen") != null){-->
+<!--            %>-->
+<!--            <h6><i> <%=session.getAttribute("quyen") %></i></h6>-->
+<!--            <%} %>-->
+        </div>
+    </div>
+</header>
+</div>
+</body>
+</html>

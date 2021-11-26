@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+  class temperature{
+      constructor(doc) {
+          this.doc = doc;
+      }
+          doiF()
+          {
+              var f = parseFloat(9/5 * this.doc  +32);
+              return f;
+
+          }
+          doikenvin()
+          {
+              var k = parseFloat(this.doc*1 + 273.15);
+              return k;
+
+          }
+
+  }
+    var chuyendoi = new  temperature(25);
+  alert(  "25 độ C tương ứng với " +  chuyendoi.doiF()+"độ F")
+  alert(" 25 độ C tương ứng với " +    chuyendoi.doikenvin()+"độ K")
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới blog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>Thêm blog</h3>
+<!--<form action="/create" method="post" th:object="${blogs}">-->
+
+
+    <label>Nội dung:</label>
+    <!--    <input type="" th:field="*{noidung}"/>-->
+    <textarea id="noidungs" type="textarea" th:field="*{blogs}" rows="6"> </textarea>
+
+    <input type="submit"  onclick="createbuuton()" value="thêm mới">
+    <div id="themoi"></div>
+<!--</form>-->
+<script>
+    function createbuuton() {
+        var noidung = document.getElementById("noidungs").value;
+        var json = {"noidung": noidung};
+        $.ajax(
+            {
+                type: "POST",
+                url: "/create/" + document.getElementById("noidungs").value,
+                success: function () {
+                    window.location.href = "http://localhost:8080/blog";
+                }
+            }
+        )
+    }
+</script>
+</body>
+</html>

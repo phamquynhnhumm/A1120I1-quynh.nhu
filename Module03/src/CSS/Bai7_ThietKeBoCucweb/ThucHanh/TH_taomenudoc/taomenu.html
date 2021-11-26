@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo menu dọc</title>
+    <link rel="stylesheet"  type="text/css"  href="taomenu.css">
+<style>
+    .menu
+    {
+        position: relative;
+    }
+    .menu, .menu ul , .menu li{
+        padding: 0px;
+        margin: 0px;
+    }
+    .menu li
+    {
+        list-style: none;
+        position: relative;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        color: blue;
+        background: black;
+        padding:0px 30px;
+        margin: 0px;
+        cursor: pointer;
+        line-height: 30px;
+    }
+    .menu a
+    {
+        text-decoration: none;
+        color: #FAF5FF;
+    }
+    .menu li:hover
+    {
+        background-color: brown;
+    }
+    .menu ul ul{
+        visibility: hidden;
+      position: absolute;
+         top: 0px;
+        left: 140px;
+
+    }
+
+    .menu ul li:hover ul{
+        visibility: visible;
+    }
+</style>
+</head>
+<body>
+<h1>ACCP i10</h1>
+<div class="menu">
+    <ul>
+        <li><a href="#">Sem1</a>
+            <ul>
+                <li><a href="#">Computing Fundametal</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">Building Dynamic Website</a></li>
+                <li><a href="#">MS Transact-SQL</a></li>
+                <li><a href="#">Project</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sem2</a>
+            <ul>
+                <li><a href="#">Cloud Computing</a></li>
+                <li><a href="#">APJ - I</a></li>
+                <li><a href="#">APJ - II</a></li>
+                <li><a href="#">APJ - III</a></li>
+                <li><a href="#">eProject</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Sem3</a>
+
+        </li>
+        <li><a href="#">Sem4</a>
+
+        </li>
+
+
+    </ul>
+</div>
+
+</body>
+</html>

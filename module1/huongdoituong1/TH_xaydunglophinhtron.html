@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành xây dưng lớp hình tròn</title>
+</head>
+<body>
+<script>
+   class Circle {
+       constructor(bk) {
+           this.bk = bk;
+       }
+
+       getRadius() {
+           return this.bk;
+       }
+
+       getArea() {
+           return Math.PI * this.bk * this.bk;
+       }
+
+   }
+   let hinhtron = new Circle(5);
+   alert(" bán kính là  : " + hinhtron.getRadius());
+   alert("dien tich hình tròn là  :" + hinhtron.getArea())
+
+</script>
+
+</body>
+</html>

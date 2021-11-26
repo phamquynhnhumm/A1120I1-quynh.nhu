@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+</head>
+<body>
+
+<div>
+    <a href="/create">
+        Thêm mới khách hàng
+    </a>
+</div>
+
+<form method="get" action="/search">
+    <input type="text" name="nameSearch" th:value="${nameSearch}">
+    <button>Search</button>
+</form>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Số điện thoại</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+        <tr th:each="khachhang: ${khachhangs}">
+            <td th:text="${khachhang.id}"></td>
+            <td th:text="${khachhang.ten}"></td>
+            <td th:text="${khachhang.ngaysinh}"></td>
+            <td th:text="${khachhang.sdt}"></td>
+            <td><a th:href="@{edit/(id= ${khachhang.id})}">Edit</a></td>
+            <td><a th:href="@{delete/(id=${khachhang.id})}">xóa</a></td>
+        </tr>
+    </table>
+
+<!--    trường hợp chưa search-->
+    <div th:if="${nameSearch == null}">
+    <span>
+        <a th:if="${khachhangs.hasPrevious()}" th:href="@{/khachhang(page=${khachhangs.number - 1})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,khachhangs.totalPages -1)}">
+            <a th:href="@{/khachhang(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+
+        <span>
+        <a th:if="${khachhangs.hasNext()}" th:href="@{/khachhang(page=${khachhangs.number + 1})}">Sau</a>
+    </span>
+    </div>
+
+<!--    trường hợp search-->
+    <div th:if="${nameSearch != null}">
+    <span>
+        <a th:if="${khachhangs.hasPrevious()}" th:href="@{/search(page=${khachhangs.number - 1} , nameSearch=${nameSearch})}">Trước</a>
+    </span>
+
+        <span th:each="pageNo: ${#numbers.sequence(0,khachhangs.totalPages -1)}">
+            <a th:href="@{/search(page = ${pageNo} , nameSearch=${nameSearch})}" th:text="${pageNo}"></a>
+    </span>
+        <span>
+        <a th:if="${khachhangs.hasNext()}" th:href="@{/search(page=${khachhangs.number + 1}, nameSearch=${nameSearch})}">Sau</a>
+    </span>
+    </div>
+
+</div>
+
+</body>
+</html>

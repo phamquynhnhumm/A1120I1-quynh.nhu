@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập tạo và sử dùng hàm 02</title>
+</head>
+<body>
+<script>
+    let so1 = prompt("hãy nhập vào một số :");
+    function binhphuong(so1) {
+        alert("Bình phương của số đó là  :" + so1*so1)
+    }
+    binhphuong(so1);
+</script>
+<script>
+
+    let bk = prompt("Hãy nhập vào bán kính hình tròn :")
+    function dientich(bk)
+    {
+        alert("diện tích hình tròn là  :" + bk*bk*3.14);
+    }
+    function chuvi(bk) {
+        alert("Chu vi hình tròn là :" + bk*2*3.14);
+    }
+    dientich(bk);
+    chuvi(bk);
+</script>
+<script>
+    let  so3=  prompt("Nhập vào  môt số để tính giai thừa của số đó :" )
+    function giaithua(so3)
+    {
+        var a=  1;
+        for ( var i = so3;i>0;i--)
+        {
+             a = a*i;
+        }
+        alert("Giai thừa của số đó là  :" + a)
+    }
+    giaithua(so3);
+</script>
+<script>
+    let s1 =prompt("Hãy nhập vào số thứ nhất :");
+    let s2 =prompt("Hãy nhập vào số thứ hai :");
+    let s3 =prompt("Hãy nhập vào số thứ ba :");
+    function  nhonhat(s1,s2,s3) {
+        var min = s1;
+        if(s2<min)
+        {
+            if(s2<s3)
+            {
+                min = s3;
+            }
+            else
+            {
+                min = s3;
+            }
+        }
+        if(s3<min)
+        {
+            if(s2>s3)
+            {
+                min = s3;
+            }
+            else
+            {
+                min = s3;
+            }
+        }
+        else min=s1;
+        alert("số nhỏ nhất trong 3 số đó là :"+ min);
+    }
+    nhonhat(s1,s2,s3);
+</script>
+<script>
+    let song = prompt("hãy nhập vào số đó  để kiểm tra có phải số nguyên dương khoog :")
+    function nguyenduong(song)
+    {
+
+        if(song >0 )
+        {alert("True")}
+        else alert("false");
+    }
+    nguyenduong(song);
+</script>
+<script>
+    let s17 = prompt("Nhập vào số thứ nhất :");
+    let s27 = prompt("Nhập vào số thứ hai:");
+    function  hoandoi(s17,s27) {
+        var tg =0;
+        tg =s17;
+        s17=s27;
+        s27=tg;
+         alert("hoán đổi hai vị trí là : " +s17  +"và "+ s27)
+    }
+    hoandoi(s17,s27);
+
+</script>
+</body>
+</html>

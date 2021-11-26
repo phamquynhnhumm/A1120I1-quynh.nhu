@@ -1,0 +1,34 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <h2>Đăng Ký</h2>
+    </div>
+    <form [formGroup]="siup"  (ngSubmit)="submit()">
+      <input  formControlName="Email" type="text"  class="fadeIn third" name="login" placeholder="Email">
+      <div class="alert alert-danger" role="alert" *ngIf="siup.get('Email').invalid && siup.get('Email').touched">
+        Invalid email!
+      </div>
+      <fieldset formGroupName="pwGroup">
+      <input formControlName="Password" type="text"  class="fadeIn third" name="login" placeholder="Password">
+      <input formControlName="confirm_password"  type="text"  class="fadeIn third" name="login" placeholder="confirm_password">
+      </fieldset>
+      <div class="alert alert-danger" role="alert" *ngIf="siup.hasError('passwordnotmatch', ['pwGroup']) &&
+      siup.get('pwGroup').touched">
+        Password does not match!
+      </div>
+      <input formControlName="Country" type="text"  class="fadeIn third" name="login" placeholder="Country">
+      <div class="alert alert-danger" role="alert" *ngIf="siup.get('Country').touched">Country không đúng yêu cầu</div>
+      <input formControlName="Age" type="text"  class="fadeIn third" name="login" placeholder="Age">
+      <div class="alert alert-danger" role="alert" *ngIf="siup.get('Age').touched">Age phải lớn hơn 18 tuổi</div>
+      <input formControlName="Gender" type="text"  class="fadeIn third" name="login" placeholder="Gender">
+      <div class="alert alert-danger" role="alert" *ngIf="siup.get('Gender').touched">Gender Không được để rỗng</div>
+      <input formControlName="Phone" type="text"  class="fadeIn third" name="login" placeholder="Phone">
+      <div class="alert alert-danger" role="alert" *ngIf="siup.get('Phone').touched">Phone  không đúng định dạng</div>
+      <input type="submit" class="fadeIn fourth" value="Đăng Ký">
+    </form>
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/login">Đăng Nhập?</a>
+    </div>
+  </div>
+</div>
+

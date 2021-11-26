@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+    .bor
+    {
+        border:forestgreen solid ;
+        border-width: 2px;
+    }
+    .bor:hover
+    {
+        border: red solid;
+    }
+</style>
+</head>
+<body>
+<div>
+    <h3 style="color:red;">DANH SÁCH SẢN PHẨM</h3>
+</div>
+<div class="row" >
+    <div class="col-sm-3 bor" th:each="sanpham : ${sanphams}">
+        <a th:href="@{view/(id=${sanpham.idSanpham})}">
+            <div>
+                <img th:src=" @{'/img/'+${sanpham.img}}" style="width:300px;height: 300px ">
+            </div>
+            <div >
+                <center><p th:text=" 'Sản phẩm :' +${sanpham.ten}"></p>
+                    <p th:text="${sanpham.gia} +'đ'"></p>
+                </center>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+<div>
+
+</div>
+
+</body>
+</html>

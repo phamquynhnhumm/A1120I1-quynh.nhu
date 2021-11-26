@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới sdt</title>
+</head>
+<body>
+<h3>Thêm sdt</h3>
+<form action="/create" method="post" th:object="${phones}">
+    <label>numbes:</label>
+    <input type="text" th:field="*{number}"/>
+    <br>
+    <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}">Name Error</span>
+    <br>
+    <input type="submit" value="thêm mới">
+</form>
+</body>
+</html>

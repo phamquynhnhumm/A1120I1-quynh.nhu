@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+<script>
+    function demo() {
+        var tien = document.getElementById('gtri').value;
+        var kieu  = document.getElementById('tien').value;
+        var kieutrave = document.getElementById('kieutra').value;
+        if(kieu== 'VND' &&  kieutrave =='USD') {
+            var tinh = parseFloat(tien * 0.0000432254);
+        }
+        if ( kieu == "Yen" && kieutrave == "USD")
+        {
+            var tinh = parseFloat(tien * 0.0096);
+        }
+        document.getElementById('hien').innerHTML= " Result : "+ tinh  +" USD";
+    }
+</script>
+</head>
+<body>
+<label><b>Amount</b></label>
+<input type="text" name="amount" id="gtri" />
+<label><b>From Curency</b></label>
+<select id="tien">
+    <option   value="VND" name="VND">Việt Nam</option>
+    <option  value="Yen" name="Yen">Nhật</option>
+</select >
+<label ><b> To Curency</b></label>
+<select id="kieutra">
+    <option  name="USD">USD</option>
+    <option name="...">...</option>
+</select>
+<button onclick="demo()" style="background-color: blueviolet; color: white;">Convert</button>
+<h3  id ="hien"> </h3>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau3</title>
+
+</head>
+<body>
+<script>
+    function isFibonacci(soNguyen) {
+        var array = [];
+        var firstNumber = 1;
+        var secondNumber = 1;
+        array.push(firstNumber);
+        array.push(secondNumber);
+        var count = 2;
+        while (count < soNguyen) {
+            var nextNumber = firstNumber + secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = nextNumber;
+            count += 1;
+            array.push(nextNumber)
+        }
+        console.log(array)
+        if (soNguyen < 4) {
+            return true
+        } else{
+            for(i=0;i<array.length;i++){
+                if (soNguyen===array[i]){
+                    return true;
+                }
+            }
+        }
+        return false
+    }
+    do {
+        var number = parseInt(prompt('Nhap vao so can kiem tra'))
+    } while (isNaN(number))
+
+    alert(isFibonacci(number))
+</script>
+</body>
+</html>

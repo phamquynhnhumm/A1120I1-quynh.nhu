@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành hiển thị đầu ra</title>
+</head>
+<body>
+  <!-- hiển thị sử dùng hàm alert() -->
+<button  type="button" onclick="show();" >Clich Me!</button>
+<script>
+    function  show() {
+        alert("Xin chào !");
+    }
+</script>
+
+
+ <!--hiển thị sử dùng thẻ HTML -->
+<div id="ip1">
+    <button type="button" onclick="hien();">Hiển thị!</button>
+</div>
+<script>
+    function hien(){
+        document.getElementById('ip1').innerText='Đây là cách hiển thị sử dùng ip!';
+    }
+    //   dùng id khi kích vào hiển thị thì dòng 'Đây là cách hiển thị sử dùng ip!' sẽ hiển thị trên trực tiếp html
+</script>
+
+<!-- hiển thị sử dùng  hàm document.write() -->
+<button type="button" onclick="hienthi();">
+    dùng hàm document.write!
+</button>
+<script>
+    function hienthi() {
+        document.write("đây là hàm  cách hiển thị sử dùng document.write()!");
+    }
+    // khi nhấn vào  " dùng hàm document.write!" này thì hiển thị lên "đây là hàm  cách hiển thị sử dùng document.write()!" và các thành phần  khác sẽ mất
+</script>
+
+<!--hiển thị sử dùng hàm console.log() -->
+  <button type="button" onclick="showMessage();">Click Me!</button>
+  <script>
+      function showMessage(){
+          console.log('Xin chào!');
+      }
+</script>
+</body>
+</html>
